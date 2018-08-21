@@ -1,0 +1,57 @@
+.br_product_for_day {
+    list-style: none;
+}
+.br_product_for_day .price {
+display: block;
+}
+.br_product_for_day img {
+    max-width: 100%;
+}
+.br_product_for_day .br_product_day {
+    margin-bottom: 1em;
+    display: inline-block;
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    border: 12px solid transparent;
+}
+.unslider-arrow {
+    display: block;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    right: -50px;
+    left: auto;
+    margin-top: -10px;
+    overflow: hidden;
+    background: rgba(0,0,0,.2) no-repeat 50% 50%;
+    font: normal normal normal 14px/1 FontAwesome;
+    background-size: 7px 11px;
+    border-radius: 32px;
+    opacity: .6;
+    transition: opacity .2s;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 20px;
+}
+.unslider-arrow.prev:after{
+    content: "\f053";
+}
+.unslider-arrow.next:after{
+    content: "\f054";
+}
+.unslider{
+    position: relative;
+}
+.unslider .brcs_slider {
+    margin: 0 20px;
+}
+.unslider .unslider-arrow.prev {
+    left: 0;
+}
+.unslider .unslider-arrow.next {
+    right: 0;
+}
+.unslider .unslider-nav {
+    display:none;
+}

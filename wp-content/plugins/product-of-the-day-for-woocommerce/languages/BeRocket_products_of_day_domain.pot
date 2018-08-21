@@ -1,0 +1,153 @@
+# Loco Gettext template
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Products of Day\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Mon Jan 25 2016 16:23:47 GMT+0200 (EET)\n"
+"POT-Revision-Date: Tue Jan 26 2016 12:47:09 GMT+0200 (EET)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#. Name of the plugin
+msgid "WooCommerce Products of Day"
+msgstr ""
+
+#. Description of the plugin
+msgid "Shows products from your shop to your customers on each day of the week."
+msgstr ""
+
+#. Author of the plugin
+msgid "BeRocket"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://berocket.com"
+msgstr ""
+
+#: ../woocommerce-products-of-day.php:190
+msgid "Products of Day settings"
+msgstr ""
+
+#: ../woocommerce-products-of-day.php:190
+msgid "Products of Day"
+msgstr ""
+
+#: ../includes/functions.php:20
+msgid "Enter 3 or more characters"
+msgstr ""
+
+#: ../includes/functions.php:598
+msgid "Font awesome"
+msgstr ""
+
+#: ../includes/functions.php:603
+msgid "Upload"
+msgstr ""
+
+#: ../includes/functions.php:606
+msgid "Remove"
+msgstr ""
+
+#: ../includes/widget.php:72
+msgid "Title:"
+msgstr ""
+
+#: ../includes/widget.php:76
+msgid "Number of Products:"
+msgstr ""
+
+#: ../includes/widget.php:80
+msgid "Random Products from List"
+msgstr ""
+
+#: ../includes/widget.php:84
+msgid "Show Thumbnails"
+msgstr ""
+
+#: ../includes/widget.php:88
+msgid "Show Add to Cart Button"
+msgstr ""
+
+#: ../templates/settings.php:7
+msgid "General"
+msgstr ""
+
+#: ../templates/settings.php:8
+msgid "CSS"
+msgstr ""
+
+#: ../templates/settings.php:9
+msgid "JavaScript"
+msgstr ""
+
+#: ../templates/settings.php:10
+msgid "License"
+msgstr ""
+
+#: ../templates/settings.php:20 ../templates/settings.php:27
+msgid "Sunday"
+msgstr ""
+
+#: ../templates/settings.php:21
+msgid "Monday"
+msgstr ""
+
+#: ../templates/settings.php:22
+msgid "Tuesday"
+msgstr ""
+
+#: ../templates/settings.php:23
+msgid "Wednesday"
+msgstr ""
+
+#: ../templates/settings.php:24
+msgid "Thursday"
+msgstr ""
+
+#: ../templates/settings.php:25
+msgid "Friday"
+msgstr ""
+
+#: ../templates/settings.php:26
+msgid "Saturday"
+msgstr ""
+
+#: ../templates/settings.php:54
+msgid "Custom CSS"
+msgstr ""
+
+#: ../templates/settings.php:64
+msgid "On Page Load"
+msgstr ""
+
+#: ../templates/settings.php:74
+msgid "Plugin key"
+msgstr ""
+
+#: ../templates/settings.php:78
+msgid "Key for plugin from BeRocket.com"
+msgstr ""
+
+#: ../templates/settings.php:86
+msgid "Save Changes"
+msgstr ""
+
+#: ../templates/settings.php:90
+msgid "WooCommerce Products of Day developed by"
+msgstr ""
