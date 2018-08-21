@@ -1,0 +1,201 @@
+.br_settings .nav-block{
+    display: none;
+}
+.br_settings .nav-block.nav-block-active{
+    display: block;
+}
+.br_settings textarea{
+    width: 100%;
+    resize: vertical;
+    min-height: 100px;
+}
+.br_saved,
+.br_not_saved{
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    z-index: 9999999;
+    color: #333333;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation-name: br_saved_anim;
+    animation-duration: 0.2s;
+    transition: background-color 0.6s;
+    transition: box-shadow 0.6s;
+}
+@keyframes br_saved_anim {
+    from {
+        right: -50px;
+    }
+
+    to {
+        right: 50px;
+    }
+}
+.br_saved_remove {
+    animation-name: br_saved_remove_anim;
+    animation-duration: 0.2s;
+}
+@keyframes br_saved_remove_anim {
+    from {
+        right: 50px;
+    }
+
+    to {
+        right: -50px;
+    }
+}
+.br_saved{
+    box-shadow: 1px 1px 3px 1px #55ff55 inset, 0 0 5px 0;
+    background-color: #33bb33;
+}
+.br_not_saved{
+    box-shadow: 1px 1px 3px 1px #ff5555 inset, 0 0 5px 0;
+    background-color: #bb3333!important;
+}
+.br_saving {
+    box-shadow: 1px 1px 3px 1px #cfcfcf inset, 0 0 5px 0;
+    background-color: #bbbbbb!important;
+}
+.br_saved .fa,
+.br_not_saved .fa{
+    width: 50px;
+    display: block;
+    line-height: 50px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 32px;
+}
+.br_saved .fa-check,
+.br_not_saved .fa-times{
+    animation-name: br_saved_anim_fa;
+    animation-duration: 0.4s;
+}
+@keyframes br_saved_anim_fa {
+    0% {
+        font-size: 0px;
+    }
+
+    50% {
+        font-size: 0px;
+    }
+
+    100% {
+        font-size: 32px;
+    }
+}
+
+.berocket_pagination_style {
+    background-color: #FAFAFA;
+    border-collapse: collapse;
+    min-width: 100%;
+}
+.berocket_pagination_style tr th,
+.berocket_pagination_style tr td {
+    border: 1px solid #999;
+    border-left: 0;
+    text-align: center;
+    padding: 0.5em;
+}
+.berocket_pagination_style tr th:first-child,
+.berocket_pagination_style tr td:first-child {
+    border-left: 1px solid #999;
+}
+.berocket_pagination_style tr th {
+    border-bottom: 0;
+}
+.berocket_pagination_style tr td {
+    border-top: 0;
+}
+.berocket_pagination_style tr:first-child td {
+    border-top: 1px solid #999;
+}
+.berocket_pagination_style h3 {
+    margin: 0;
+}
+.berocket_pagination_style input[type=text] {
+    width: 10em;
+    text-align: center;
+}
+.pagination_submit_form .colorpicker_field {
+    width: 2em; 
+    height: 1.2em; 
+    border: 1px solid black; 
+    position: relative; 
+    display: inline-block; 
+    top: 0.2em;
+}
+.br_search_box {
+    position: relative;
+}
+.br_products_search {
+    border: 1px solid #777;
+    background: #ffffff;
+    padding: 0.3em 0.3em 0 0.3em;
+    cursor: text;
+    margin: 0;
+    position: relative;
+    top: 1px;
+}
+.br_products_search * {
+    font-size: 1em;
+}
+.br_products_search li {
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1em;
+    padding: 0;
+    margin: 0;
+    margin-right: 0.3em!important;
+    margin-bottom: 0.3em!important;
+}
+.br_products_search li .br_loads {
+    position: absolute;
+    right: 0.3em;
+    bottom: 0.3em;
+    font-size: 28px;
+}
+.br_products_search .br_search_input {
+    font-size: 1em;
+    line-height: 1em;
+    padding: 0.1em;
+    border: 0;
+    outline: 0;
+    min-width: 250px;
+    height: 28px;
+    box-shadow: none;
+}
+.br_products_search .br_search_input:focus {
+    outline: 0;
+    box-shadow: none;
+}
+.br_search_result {
+    border: 1px solid #999;
+    border-top: 0;
+    background: #f7f7f7;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    max-height: 200px;
+    overflow: auto;
+    padding: 0.3em;
+    z-index: 1000;
+}
+.br_search_result li {
+    cursor: pointer;
+    padding: 0.3em;
+}
+.br_search_result li:hover {
+    background: #efefef;
+}
+.colorpicker_field, .colorpicker_field_sc {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    border: 1px solid black;
+    position: relative!important;
+}
