@@ -21,8 +21,8 @@
 	<meta name="description" content="ИНТЕРНЕТ МАГАЗИН BEAUTY SHOP ДЛЯ ПРОФЕССИОНАЛОВ ИНДУСТРИИ КРАСОТЫ">
 	<meta name="author" content="NetoLab">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="css\theme-style.css">
-	<link rel="stylesheet" href="css\ie.style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css\theme-style.css"> -->
+	<!-- <link rel="stylesheet" href="css\ie.style.css"> -->
 	<!-- Fav and touch icons -->
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="..\img\ico\apple-touch-icon-144.png">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="..\img\ico\apple-touch-icon-114.png">
