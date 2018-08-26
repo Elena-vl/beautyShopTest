@@ -24,11 +24,15 @@
 	<!-- <link rel="stylesheet" type="text/css" href="css\theme-style.css"> -->
 	<!-- <link rel="stylesheet" href="css\ie.style.css"> -->
 	<!-- Fav and touch icons -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="..\img\ico\apple-touch-icon-144.png">
+<!-- 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="..\img\ico\apple-touch-icon-144.png">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="..\img\ico\apple-touch-icon-114.png">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="..\img\ico\apple-touch-icon-72.png">
 	<link rel="apple-touch-icon-precomposed" href="..\img\ico\apple-touch-icon-57.png">
-	<link rel="shortcut icon" href="..\img\ico\favicon.ico">
+	<link rel="shortcut icon" href="..\img\ico\favicon.ico"> -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php get_template_directory_uri() ?>\img\ico\apple-touch-icon-144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php get_template_directory_uri() ?>\img\ico\apple-touch-icon-72.png">
+	<link rel="apple-touch-icon-precomposed" href="<?php get_template_directory_uri() ?>\img\ico\apple-touch-icon-57.png">
+	<link rel="shortcut icon" href="<?php get_template_directory_uri() ?>\img\ico\favicon.ico">
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -36,9 +40,11 @@
 	<!--[if IE 7]>
 	  <link rel="stylesheet" href="css/font-awesome-ie7.css">
 	<![endif]-->
-	<script src="js\vendor\modernizr.js"></script>
+	<!-- <script src="js\vendor\modernizr.js"></script> -->
 	<!--[if IE 8]><script src="js/vendor/less-1.3.3.js"></script><![endif]-->
-	<!--[if gt IE 8]><!--><script src="js\vendor\less.js"></script><!--<![endif]-->
+	<!--[if gt IE 8]><!-->
+	<!-- <script src="js\vendor\less.js"></script> -->
+	<!--<![endif]-->
 	<?php /* Все скрипты и стили теперь подключаются в functions.php */ ?>
 	<meta charset="<?php bloginfo( 'charset' ); // кодировка ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,7 +102,7 @@
 						<div id="container-fixed">
 							<div class="row">
 								<div class="col-md-3">
-									<a href="index.html" class="header-logo"> <img src="img/logo-big-shop.png" alt="Интернет магазин профессиональной косметики"></a>		
+									<a href="index.html" class="header-logo"> <img src="<?php get_template_directory_uri() ?>\img\logo-big-shop.png" alt="Интернет магазин профессиональной косметики"></a>		
 								</div>
 
 								<div class="col-md-5">
@@ -115,7 +121,7 @@
 											<span> <?php cart_link(); ?><?php the_widget( 'WC_Widget_Cart', 'title=' ); ?> </span>
 											<!-- <span>0 товар(ов)-0.00</span> -->
 										</a>
-										<div class="dropdown-menu shopping-cart-content pull-right">
+										<!-- <div class="dropdown-menu shopping-cart-content pull-right">
 											<div class="shopping-cart-items">
 												<div class="item pull-left">
 													<img src="http://placehold.it/56x70" alt="Название товара" class="pull-left">
@@ -158,7 +164,7 @@
 													<a href="#" class="btn-read pull-right">Заказать</a>
 												</div>
 											</div>
-										</div>
+										</div> -->
 									</div><!-- /header-mini-cart -->
 									<div class="top-icons">
 										<div class="top-icon"><a href="" title="Оповещения"><i class="fa fa-bell"></i></a><span>12</span></div>

@@ -102,11 +102,11 @@
 					</div>
 					<div class="col-md-4">
 						<ul class="footer-payments pull-right">
-							<li><img src="img/payment-maestro.jpg" alt="payment" /></li>
-							<li><img src="img/payment-discover.jpg" alt="payment" /></li>
-							<li><img src="img/payment-visa.jpg" alt="payment" /></li>
-							<li><img src="img/payment-american-express.jpg" alt="payment" /></li>
-							<li><img src="img/payment-paypal.jpg" alt="payment" /></li>
+							<li><img src="<?php get_template_directory_uri() ?>\img\payment-maestro.jpg" alt="payment" /></li>
+							<li><img src="<?php get_template_directory_uri() ?>\img\payment-discover.jpg" alt="payment" /></li>
+							<li><img src="<?php get_template_directory_uri() ?>\img\payment-visa.jpg" alt="payment" /></li>
+							<li><img src="<?php get_template_directory_uri() ?>\img\payment-american-express.jpg" alt="payment" /></li>
+							<li><img src="<?php get_template_directory_uri() ?>\img\payment-paypal.jpg" alt="payment" /></li>
 						</ul>
 					</div>
 				</div>
