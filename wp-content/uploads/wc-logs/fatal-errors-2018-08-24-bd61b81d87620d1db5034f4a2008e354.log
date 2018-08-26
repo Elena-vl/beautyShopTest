@@ -1,0 +1,16 @@
+2018-08-24T10:48:24+00:00 CRITICAL Uncaught Error: Call to a member function is_sold_individually() on string in C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\single.php:102
+Stack trace:
+#0 C:\OSPanel\domains\beauty-shop\wp-includes\template-loader.php(74): include()
+#1 C:\OSPanel\domains\beauty-shop\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\beauty-shop\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown
+
+2018-08-24T11:12:40+00:00 CRITICAL Uncaught Error: Call to a member function is_sold_individually() on string in C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\single.php:109
+Stack trace:
+#0 C:\OSPanel\domains\beauty-shop\wp-includes\template-loader.php(74): include()
+#1 C:\OSPanel\domains\beauty-shop\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\beauty-shop\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown
+
