@@ -48,26 +48,26 @@ jQuery(document).ready(function($) {
     $("#nav-bestseller .prev").click(function() {
         $("#owl-bestseller").trigger('owl.prev');
     });
-
-    $("#owl-bestseller").owlCarousel({
-        // Most important owl features
-        items: 4,
-        itemsCustom: false,
-        itemsDesktop: [1199, 3],
-        itemsDesktopSmall: [980, 2],
-        itemsTablet: [630, 1],
-        itemsTabletSmall: false,
-        itemsMobile: [479, 1],
-        singleItem: false,
-        itemsScaleUp: false,
-        responsive: true,
-        responsiveRefreshRate: 200,
-        responsiveBaseWidth: window,
-        autoPlay: false,
-        stopOnHover: false,
-        navigation: false
-    });
-
+    if(typeof owlCarousel === 'function'){
+        $("#owl-bestseller").owlCarousel({
+            // Most important owl features
+            items: 4,
+            itemsCustom: false,
+            itemsDesktop: [1199, 3],
+            itemsDesktopSmall: [980, 2],
+            itemsTablet: [630, 1],
+            itemsTabletSmall: false,
+            itemsMobile: [479, 1],
+            singleItem: false,
+            itemsScaleUp: false,
+            responsive: true,
+            responsiveRefreshRate: 200,
+            responsiveBaseWidth: window,
+            autoPlay: false,
+            stopOnHover: false,
+            navigation: false
+        });
+    }
     // Summer sale owl slider script
     $("#nav-summer-sale .next").click(function() {
         $("#owl-summer-sale").trigger('owl.next');
@@ -75,26 +75,26 @@ jQuery(document).ready(function($) {
     $("#nav-summer-sale .prev").click(function() {
         $("#owl-summer-sale").trigger('owl.prev');
     });
-
-    $("#owl-summer-sale").owlCarousel({
-        // Most important owl features
-        items: 3,
-        itemsCustom: false,
-        itemsDesktop: [1199, 2],
-        itemsDesktopSmall: [980, 2],
-        itemsTablet: [630, 1],
-        itemsTabletSmall: false,
-        itemsMobile: [479, 1],
-        singleItem: false,
-        itemsScaleUp: false,
-        responsive: true,
-        responsiveRefreshRate: 200,
-        responsiveBaseWidth: window,
-        autoPlay: false,
-        stopOnHover: false,
-        navigation: false
-    });
-
+    if(typeof owlCarousel === 'function'){
+        $("#owl-summer-sale").owlCarousel({
+            // Most important owl features
+            items: 3,
+            itemsCustom: false,
+            itemsDesktop: [1199, 2],
+            itemsDesktopSmall: [980, 2],
+            itemsTablet: [630, 1],
+            itemsTabletSmall: false,
+            itemsMobile: [479, 1],
+            singleItem: false,
+            itemsScaleUp: false,
+            responsive: true,
+            responsiveRefreshRate: 200,
+            responsiveBaseWidth: window,
+            autoPlay: false,
+            stopOnHover: false,
+            navigation: false
+        });
+    }
     // iphone(ios) owl slider script
     $("#nav-child .next").click(function() {
         $("#owl-child").trigger('owl.next');
@@ -102,26 +102,26 @@ jQuery(document).ready(function($) {
     $("#nav-child .prev").click(function() {
         $("#owl-child").trigger('owl.prev');
     });
-
-    $("#owl-child").owlCarousel({
-        // Most important owl features
-        items: 3,
-        itemsCustom: false,
-        itemsDesktop: [1199, 2],
-        itemsDesktopSmall: [980, 2],
-        itemsTablet: [630, 1],
-        itemsTabletSmall: false,
-        itemsMobile: [479, 1],
-        singleItem: false,
-        itemsScaleUp: false,
-        responsive: true,
-        responsiveRefreshRate: 200,
-        responsiveBaseWidth: window,
-        autoPlay: false,
-        stopOnHover: false,
-        navigation: false
-    });
-
+    if(typeof owlCarousel === 'function'){
+        $("#owl-child").owlCarousel({
+            // Most important owl features
+            items: 3,
+            itemsCustom: false,
+            itemsDesktop: [1199, 2],
+            itemsDesktopSmall: [980, 2],
+            itemsTablet: [630, 1],
+            itemsTabletSmall: false,
+            itemsMobile: [479, 1],
+            singleItem: false,
+            itemsScaleUp: false,
+            responsive: true,
+            responsiveRefreshRate: 200,
+            responsiveBaseWidth: window,
+            autoPlay: false,
+            stopOnHover: false,
+            navigation: false
+        }); 
+    }
     // owl slider script
     $("#nav-tabs .next").click(function() {
         $("#owl-new").trigger('owl.next');
@@ -132,6 +132,7 @@ jQuery(document).ready(function($) {
         $("#owl-featured").trigger('owl.prev');
     });
 
+    if(typeof owlCarousel === 'function'){
     $("#owl-new").owlCarousel({
         // Most important owl features
         items: 4,
@@ -150,6 +151,7 @@ jQuery(document).ready(function($) {
         stopOnHover: false,
         navigation: false
     });
+
     $("#owl-featured").owlCarousel({
         // Most important owl features
         items: 4,
@@ -168,7 +170,7 @@ jQuery(document).ready(function($) {
         stopOnHover: false,
         navigation: false
     });
-
+    }
     // owl slider script
     $("#nav-tabs2 .next").click(function() {
         $("#owl-new2").trigger('owl.next');
@@ -378,5 +380,5 @@ jQuery(document).ready(function($) {
 
 });
 
-new WOW().init();
+// new WOW().init();
 

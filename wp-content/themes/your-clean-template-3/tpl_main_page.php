@@ -10,7 +10,7 @@ Template Name: Main Page
 					<ul class="list-unstyled">	<!-- SLIDE	-->
 						<li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
 							<!-- MAIN IMAGE -->
-							<img src="\img\bg1.jpg"	alt="slidebg1"	data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+							<img src="<?php get_template_directory_uri() ?>\img\bg1.jpg"	alt="slidebg1"	data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 							<!-- LAYERS -->
 							<div class="tp-caption skewfromrightshort customout"
 								 data-x="20"
@@ -23,7 +23,7 @@ Template Name: Main Page
 								 data-endeasing="Power4.easeIn"
 								 data-captionhidden="on"
 								 style="z-index: 4">
-								<img src="isamg\preview\slider\1.png" alt="">
+								<img src="<?php get_template_directory_uri() ?>\img\preview\slider\1.png" alt="">
 							</div>
 							<div class="tp-caption skewfromrightshort customout"
 								 data-x="20"
@@ -36,7 +36,7 @@ Template Name: Main Page
 								 data-endeasing="Power4.easeIn"
 								 data-captionhidden="on"
 								 style="z-index: 4">
-								<img src="img\preview\slider\1-2.png" alt="">
+								<img src="<?php get_template_directory_uri() ?>\img\preview\slider\1-2.png" alt="">
 							</div>
 							<div class="tp-caption skewfromrightshort customout"
 								 data-x="20"
@@ -49,7 +49,7 @@ Template Name: Main Page
 								 data-endeasing="Power4.easeIn"
 								 data-captionhidden="on"
 								 style="z-index: 4">
-								<img src="img\preview\slider\1-1.png" alt="">
+								<img src="<?php get_template_directory_uri() ?>\img\preview\slider\1-1.png" alt="">
 							</div>
 							<div class="tp-caption customin customout hidden-xs"
 								 data-x="20"
@@ -82,7 +82,7 @@ Template Name: Main Page
 						</li>
 						<li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
 							<!-- MAIN IMAGE -->
-							<img src="\img\bg2.jpg"	alt="slidebg1"	data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+							<img src="<?php get_template_directory_uri() ?>\img\bg2.jpg"	alt="slidebg1"	data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 							<!-- LAYERS -->
 							<div class="tp-caption skewfromrightshort customout"
 								 data-x="20"
@@ -95,7 +95,7 @@ Template Name: Main Page
 								 data-endeasing="Power4.easeIn"
 								 data-captionhidden="on"
 								 style="z-index: 2">
-								<img src="img\preview\slider\1-2.png" alt="">
+								<img src="<?php get_template_directory_uri() ?>\img\preview\slider\1-2.png" alt="">
 							</div>
 							<div class="tp-caption skewfromrightshort customout"
 								 data-x="20"
@@ -108,7 +108,7 @@ Template Name: Main Page
 								 data-endeasing="Power4.easeIn"
 								 data-captionhidden="on"
 								 style="z-index: 2">
-								<img src="img\preview\slider\1-1.png" alt="">
+								<img src="<?php get_template_directory_uri() ?>\img\preview\slider\1-1.png" alt="">
 							</div>
 							<div class="tp-caption customin customout hidden-xs"
 								 data-x="20"
@@ -206,65 +206,6 @@ Template Name: Main Page
 												echo "</ul>";
 											}
 										?>
-									<!--<ul class="list-unstyled ul-side-category">
-											<li>
-												<a href="#"><i class="fa fa-angle-right"></i> Снятие макияжа</a>
-											</li>
-											<li><a href=""><i class="fa fa-angle-right"></i> Основы под макияж</a>
-												<ul class="sub-category">
-													<li><a href="">Основы под макияж Make Up Atelier</a>
-													</li>
-													<li><a href="">Основы под макияж Manly</a>
-													</li>
-												</ul>
-											</li>
-											<li>
-											<a href="#"><i class="fa fa-angle-right"></i> Тональные средства</a>
-											</li>
-											<li>
-											<a href="#"><i class="fa fa-angle-right"></i> Корректирующие средства</a>
-											</li>
-											<li>
-											<a href="#"><i class="fa fa-angle-right"></i> Пудры</a>
-											</li>
-											<li>
-											<a href="#"><i class="fa fa-angle-right"></i> Средства для век</a>
-											</li>
-											<li>
-											<a href="#"><i class="fa fa-angle-right"></i> Карандаши</a>
-											</li>
-											<li>
-											<a href="#"><i class="fa fa-angle-right"></i> Помада, блеск</a>
-											</li>
-											<li>
-											<a href="#"><i class="fa fa-angle-right"></i> Подводки</a>
-											</li>
-											<li>
-											<a href="#"><i class="fa fa-angle-right"></i> Тушь</a>
-											</li>
-											<li>
-											<a href="#"><i class="fa fa-angle-right"></i> Кисти</a>
-											</li>
-											<li>
-											<a href="#"><i class="fa fa-angle-right"></i> Аксессуары</a>
-											</li>
-											<li>
-											<a href="#"><i class="fa fa-angle-right"></i> Уход за лицом</a>
-											</li>
-											<li>
-											<a href="#"><i class="fa fa-angle-right"></i> Уход за телом</a>
-											</li>
-											<li>
-											<a href="#"><i class="fa fa-angle-right"></i> Уход за волосами</a>
-											</li>
-											<li>
-											<a href="#"><i class="fa fa-angle-right"></i> Средства для ногтей</a>
-											</li>
-											<li>
-											<a href="#"><i class="fa fa-angle-right"></i> Наращивание ресниц</a>
-											</li>
-										</ul> -->
-
 									</div>
 								</div>
 							</div>
@@ -415,7 +356,7 @@ Template Name: Main Page
 						<div class="col-md-9">
 							<div class="banner">
 								<a href="#">
-									<img src="img/action.jpg" class="img-responsive" alt="">
+									<img src="<?php get_template_directory_uri() ?>\img\action.jpg" class="img-responsive" alt="">
 								</a> 
 							</div>
 
@@ -788,10 +729,7 @@ Template Name: Main Page
 								<div id="owl-summer-sale"	class="owl-carousel">
 									<?php
 											$args	 = array(
-												'post_type'		 => 'product',
-												'posts_per_page' => 3,
-												'product_cat'	 => $term_slug,
-												
+												'post_type'		 => 'product',											
 												'tax_query'		 => array(
 													array(
 														'taxonomy'	 => 'product_visibility',
@@ -1028,25 +966,25 @@ Template Name: Main Page
 					</div>
 					<div id="owl-partners"	class="owl-carousel">
 						<div class="partner">
-							<img src="img/preview/logo1.png" class="img-responsive" alt="">
+							<img src="<?php get_template_directory_uri() ?>/img/preview/logo1.png" class="img-responsive" alt="">
 						</div>
 						<div class="partner">
-							<img src="img/preview/logo2.png" class="img-responsive"	alt="">
+							<img src="<?php get_template_directory_uri() ?>/img/preview/logo2.png" class="img-responsive"	alt="">
 						</div>
 						<div class="partner">
-							<img src="img/preview/logo3.png" class="img-responsive"	alt="">
+							<img src="<?php get_template_directory_uri() ?>/img/preview/logo3.png" class="img-responsive"	alt="">
 						</div>
 						<div class="partner">
-							<img src="img/preview/logo4.png" class="img-responsive"	alt="">
+							<img src="<?php get_template_directory_uri() ?>/img/preview/logo4.png" class="img-responsive"	alt="">
 						</div>
 						<div class="partner">
-							<img src="img/preview/logo5.png" class="img-responsive"	alt="">
+							<img src="<?php get_template_directory_uri() ?>/img/preview/logo5.png" class="img-responsive"	alt="">
 						</div>
 						<div class="partner">
-							<img src="img/preview/logo6.png" class="img-responsive"	alt="">
+							<img src="<?php get_template_directory_uri() ?>/img/preview/logo6.png" class="img-responsive"	alt="">
 						</div>
 						<div class="partner">
-							<img src="img/preview/logo7.png" class="img-responsive"	alt="">
+							<img src="<?php get_template_directory_uri() ?>/img/preview/logo7.png" class="img-responsive"	alt="">
 						</div>
 					</div>
 				</div>
