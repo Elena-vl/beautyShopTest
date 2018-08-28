@@ -1,0 +1,52 @@
+2018-08-28T13:33:23+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\functions.php:237
+Stack trace:
+#0 C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\header.php(121): cart_link()
+#1 C:\OSPanel\domains\beauty-shop\wp-includes\template.php(688): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\beauty-shop\wp-includes\template.php(647): load_template('C:\\OSPanel\\doma...', true)
+#3 C:\OSPanel\domains\beauty-shop\wp-includes\general-template.php(41): locate_template(Array, true)
+#4 C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\tpl_main_page.php(6): get_header()
+#5 C:\OSPanel\domains\beauty-shop\wp-includes\template-loader.php(74): include('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\beauty-shop\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\beauty-shop\index.php(17): require('C:\\OSPanel\\doma...')
+#8 {main}
+  thrown
+
+2018-08-28T13:35:37+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\functions.php:239
+Stack trace:
+#0 C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\header.php(121): cart_link()
+#1 C:\OSPanel\domains\beauty-shop\wp-includes\template.php(688): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\beauty-shop\wp-includes\template.php(647): load_template('C:\\OSPanel\\doma...', true)
+#3 C:\OSPanel\domains\beauty-shop\wp-includes\general-template.php(41): locate_template(Array, true)
+#4 C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\tpl_main_page.php(6): get_header()
+#5 C:\OSPanel\domains\beauty-shop\wp-includes\template-loader.php(74): include('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\beauty-shop\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\beauty-shop\index.php(17): require('C:\\OSPanel\\doma...')
+#8 {main}
+  thrown
+
+2018-08-28T13:35:46+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\functions.php:239
+Stack trace:
+#0 C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\header.php(121): cart_link()
+#1 C:\OSPanel\domains\beauty-shop\wp-includes\template.php(688): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\beauty-shop\wp-includes\template.php(647): load_template('C:\\OSPanel\\doma...', true)
+#3 C:\OSPanel\domains\beauty-shop\wp-includes\general-template.php(41): locate_template(Array, true)
+#4 C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\404.php(7): get_header()
+#5 C:\OSPanel\domains\beauty-shop\wp-includes\template-loader.php(74): include('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\beauty-shop\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\beauty-shop\index.php(17): require('C:\\OSPanel\\doma...')
+#8 {main}
+  thrown
+
+2018-08-28T13:35:47+00:00 CRITICAL Uncaught Error: Call to a member function get_cart_total() on null in C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\functions.php:239
+Stack trace:
+#0 C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\header.php(121): cart_link()
+#1 C:\OSPanel\domains\beauty-shop\wp-includes\template.php(688): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\beauty-shop\wp-includes\template.php(647): load_template('C:\\OSPanel\\doma...', true)
+#3 C:\OSPanel\domains\beauty-shop\wp-includes\general-template.php(41): locate_template(Array, true)
+#4 C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\404.php(7): get_header()
+#5 C:\OSPanel\domains\beauty-shop\wp-includes\template-loader.php(74): include('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\beauty-shop\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#7 C:\OSPanel\domains\beauty-shop\index.php(17): require('C:\\OSPanel\\doma...')
+#8 {main}
+  thrown
+

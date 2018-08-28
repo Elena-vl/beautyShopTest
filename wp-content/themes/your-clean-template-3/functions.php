@@ -40,42 +40,37 @@ function add_styles() {
 }
 /*Подключение JS-скриптов*/
 function add_scripts() {
-	// 0
+	
 	wp_deregister_script('jquery'); // выключаем стандартный jquery
-	wp_enqueue_script('jquery','http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js','','',true); // добавляем свой
-	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.min.js','','',true); // бутстрап
-	wp_enqueue_script('main', get_template_directory_uri().'/js/main.js','','',true); // и скрипты шаблона
-
-
-	wp_enqueue_script('less', get_template_directory_uri().'/js/vendor/less.js','','',true);
-	wp_enqueue_script('less-1.3.3', get_template_directory_uri().'/js/vendor/less-1.3.3.js','','',true);
-
-	wp_enqueue_script('lightbox', get_template_directory_uri().'/js/vendor/lightbox.js','','',true);
 	wp_enqueue_script('modernizr', get_template_directory_uri().'/js/vendor/modernizr.js','','',true);
-	wp_enqueue_script('tab', get_template_directory_uri().'/js/vendor/tab.js','','',true);
-	wp_enqueue_script('carousel', get_template_directory_uri().'/js/vendor/carousel.js','','',true);
-
-	// 1
+	wp_enqueue_script('jquery','http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js','','',true); // добавляем свой
 	wp_enqueue_script('jquery', get_template_directory_uri().'/js/jquery.js','','',true);
 	wp_enqueue_script('jquery.easing.1.3', get_template_directory_uri().'/js/vendor/jquery.easing.1.3.js','','',true);
-	wp_enqueue_script('bootstrap.min', get_template_directory_uri().'/js/bootstrap.js','','',true);
-	// 2
+	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.min.js','','',true); // бутстрап
 	wp_enqueue_script('jquery.flexisel', get_template_directory_uri().'/js/vendor/jquery.flexisel.js','','',true);
 	wp_enqueue_script('wow.min', get_template_directory_uri().'/js/vendor/wow.min.js','','',true);
 	wp_enqueue_script('jquery.transit', get_template_directory_uri().'/js/vendor/jquery.transit.js','','',true);
 	wp_enqueue_script('jquery.jcountdown', get_template_directory_uri().'/js/vendor/jquery.jcountdown.js','','',true);
 	wp_enqueue_script('jquery.jPages', get_template_directory_uri().'/js/vendor/jquery.jPages.js','','',true);
 	wp_enqueue_script('owl.carousel', get_template_directory_uri().'/js/vendor/owl.carousel.js','','',true);
-	wp_enqueue_script('owlCarousel', get_template_directory_uri().'/js/vendor/owl.carousel.js','','',true);
-	// 3
 	wp_enqueue_script('responsiveslides.min', get_template_directory_uri().'/js/vendor/responsiveslides.min.js','','',true);
-	wp_enqueue_script('jquery.elevateZoom-3.0.8.min', get_template_directory_uri().'/js/vendor/jquery.elevateZoom-3.0.8.min.js','','',true);
-	// 4
-
+	
 	// jQuery REVOLUTION Slider
 	wp_enqueue_script('jquery.themepunch.plugins.min', get_template_directory_uri().'/js/vendor/jquery.themepunch.plugins.min.js','','',true);
 	wp_enqueue_script('jquery.themepunch.revolution.min', get_template_directory_uri().'/js/vendor/jquery.themepunch.revolution.min.js','','',true);
 	wp_enqueue_script('jquery.scrollTo-1.4.2-min', get_template_directory_uri().'/js/vendor/jquery.scrollTo-1.4.2-min.js');
+
+	wp_enqueue_script('jquery.elevateZoom-3.0.8.min', get_template_directory_uri().'/js/vendor/jquery.elevateZoom-3.0.8.min.js','','',
+	true);
+
+	wp_enqueue_script('less', get_template_directory_uri().'/js/vendor/less.js','','',true);
+	wp_enqueue_script('less-1.3.3', get_template_directory_uri().'/js/vendor/less-1.3.3.js','','',true);
+
+	wp_enqueue_script('lightbox', get_template_directory_uri().'/js/vendor/lightbox.js','','',true);
+
+	wp_enqueue_script('tab', get_template_directory_uri().'/js/vendor/tab.js','','',true);
+	wp_enqueue_script('carousel', get_template_directory_uri().'/js/vendor/carousel.js','','',true);
+	
 	//  Custome Slider 
 	wp_enqueue_script('main', get_template_directory_uri().'/js/main.js','','',true); // и скрипты шаблона
 }
@@ -232,12 +227,19 @@ if (!function_exists('content_class_by_sidebar')) { // если ф-я уже е�
 		}
 	}
 }
+ global $woocommerce;
 
 if ( ! function_exists( 'cart_link' ) ) {
+
  function cart_link() {
  ?>
-<a class="cart-contents" href="/cart/" title="<?php _e( 'Перейти в корзину' ); ?>"><i class="fa fa-shopping-cart"></i><?php echo sprintf (_n( '%d товар', '%d товаров', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?> - <?php echo WC()->cart->get_cart_total(); ?></a> 
+<!-- <a class="cart-contents" href="/cart/" title="<?php _e( 'Перейти в корзину' ); ?>"><i class="fa fa-shopping-cart"></i><?php echo sprintf (_n( '%d товар', '%d товаров', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?> - <?php echo WC()->cart->get_cart_total(); ?></a>  -->
+<a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>">
+	<i class="fa fa-shopping-cart"></i>
+	<?php echo sprintf(_n('%d товар', '%d товаров', WC()->cart->cart_contents_count, 'woothemes'), WC()->cart->cart_contents_count);?> - <?php echo WC()->cart->get_cart_total(); ?>
+</a>
  <?php
+ $fragments['a.cart-customlocation'] = ob_get_clean();
  }
 }
 
@@ -249,16 +251,4 @@ if ( ! function_exists( 'cart_link' ) ) {
     return substr($content, 0, 100).'...';
   }
 
-// remove_all_actions('woocommerce_before_single_product');
-// remove_all_actions('woocommerce_before_single_product_summary');
-// remove_all_actions('woocommerce_single_product_summary');
-// remove_all_actions('woocommerce_after_single_product_summary');
-// remove_all_actions('woocommerce_after_single_product');
-
-// add_action('woocommerce_before_single_product_summary', 'woocommerce_template_single_price', 1);
-// add_action('woocommerce_before_single_product_summary', 'woocommerce_template_single_rating', 1);
-// remove_action('woocommerce_single_product_summary','woocommerce_template_single_meta',40);
-
-//add_action('woocommerce_single_product_summary', 'tpl_product_detail', 61);
-// function tpl_product_detail(){
-// 	global $product;
+ ?>

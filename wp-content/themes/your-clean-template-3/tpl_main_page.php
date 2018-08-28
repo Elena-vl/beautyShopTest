@@ -281,11 +281,18 @@ Template Name: Main Page
 								<div class="widget-block">
 									<div class="row">
 										<div class="col-md-4 col-sm-2 col-xs-3">
-											<img class="img-responsive" src="http://placehold.it/400x500" alt="" title="">	 
+										<?php 
+											$post_thumbnail_id = $product->get_image_id();
+											 $thumbnail_size = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
+											$thumbnail_src = wp_get_attachment_image_src( $post_thumbnail_id, $thumbnail_size );
+											$html='<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-responsive" alt="" ></img>';
+											echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );		
+										?>
+											<!-- <img class="img-responsive" src="http://placehold.it/400x500" alt="" title="">	  -->
 										</div>
 										<div class="col-md-8 col-sm-10 col-xs-9">
 											<div class="block-name">
-												<a href="#" class="product-name"><?php echo $product->name; ?></a>
+												<a href="<?php echo get_the_permalink() ?>" class="product-name"><?php echo $product->name; ?></a>
 												<p class="product-price"><span>₽<?php echo $product->regular_price; ?></span> ₽<?php echo $product->sale_price; ?></p>
 											</div>
 											<div class="product-rating">
@@ -339,7 +346,7 @@ Template Name: Main Page
 									</div>
 									<div class="col-md-8	col-sm-10 col-xs-8">
 										<div class="block-name">
-											<a href="#" class="product-name"><?php the_title(); ?></a>
+											<a href="<?php echo get_the_permalink() ?>" class="product-name"><?php the_title(); ?></a>
 										</div>
 										<p class="description">
 											<?php the_content(); ?>
@@ -407,17 +414,38 @@ Template Name: Main Page
 														<!-- <div class="product-sale">11% <br> off</div> -->
 														<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
 														<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-														<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-														<img src="http://placehold.it/400x500" class="img-responsive" alt="">
+														<?php 
+															$post_thumbnail_id = $product->get_image_id();
+															$thumbnail_src = wp_get_attachment_image_src( $post_thumbnail_id, 'full');
+															
+															$html='<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-overlay img-responsive" alt="" ></img>';
+															echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );	
+															$html='<img src="http://placehold.it/400x500" class="img-responsive" alt="" ></img>';
+															echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );			
+														?>
+														<!-- <img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
+														<img src="http://placehold.it/400x500" class="img-responsive" alt=""> -->
 													</figure>
 													<div class="product-caption">
 														<div class="block-name">
-															<a href="#" class="product-name"><?php echo $product->name; ?></a>
+															<a href="<?php echo get_the_permalink(); ?>" class="product-name"><?php echo $product->name; ?></a>
 															<p class="product-price"><span>₽<?php echo $product->regular_price; ?></span> ₽<?php echo $product->sale_price; ?></p>
 
 														</div>
 														<div class="product-cart">
-															<a href="#"><i class="fa fa-shopping-cart"></i> </a>
+															<!-- <a type="submit" class="shoping"  value="<?php echo esc_attr( $product->get_id() ); ?>" > -->
+														 	<!-- <i class="fa fa-shopping-cart"></i> -->
+														 	<!-- <?php echo $product->single_add_to_cart_text(); ?> -->
+														 	<!-- <?php do_action( 'woocommerce_after_add_to_cart_button' ); ?> -->
+															<!-- <?php echo esc_html( $product->single_add_to_cart_text() ); ?> -->
+															<!-- </a> -->
+														
+															<!-- <a href="#"> 
+																<?php $woocommerce->cart->add_to_cart( $product->id ); ?>-->
+																<i class="fa fa-shopping-cart">
+																	<?php woocommerce_template_loop_add_to_cart(); ?>
+																</i>
+															<!-- </a> -->
 														</div>
 													</div>
 												</div>
@@ -450,99 +478,6 @@ Template Name: Main Page
 												</div>
 
 											</div>
-										</div>
-										<div class="text-center">
-											<article class="product light">
-												<figure class="figure-hover-overlay">																		
-													<a href="#"	class="figure-href"></a>
-													<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-													<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-													<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-													<img src="http://placehold.it/400x500" class="img-responsive" alt="">
-
-												</figure>
-												<div class="product-caption">
-													<div class="block-name">
-														<a href="#" class="product-name">Product name</a>
-														<p class="product-price"><span>₽330</span> ₽320.99</p>
-
-													</div>
-													<div class="product-cart">
-														<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-													</div>
-												</div>
-
-											</article>
-										</div>
-										<div class="text-center">
-											<article class="product light">
-												<figure class="figure-hover-overlay">																		
-													<a href="#"	class="figure-href"></a>
-													<div class="product-new">new</div>
-													<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-													<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-													<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-													<img src="http://placehold.it/400x500" class="img-responsive" alt="">
-
-												</figure>
-												<div class="product-caption">
-													<div class="block-name">
-														<a href="#" class="product-name">Product name</a>
-														<p class="product-price"><span>₽330</span> ₽320.99</p>
-
-													</div>
-													<div class="product-cart">
-														<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-													</div>
-												</div>
-
-											</article>
-										</div>
-										<div class="text-center">
-											<article class="product light">
-												<figure class="figure-hover-overlay">																		
-													<a href="#"	class="figure-href"></a>
-													<div class="product-sale">17% <br> off</div>
-													<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-													<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-													<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-													<img src="http://placehold.it/400x500" class="img-responsive" alt="">
-												</figure>
-												<div class="product-caption">
-													<div class="block-name">
-														<a href="#" class="product-name">Product name</a>
-														<p class="product-price"><span>₽330</span> ₽320.99</p>
-
-													</div>
-													<div class="product-cart">
-														<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-													</div>
-												</div>
-
-											</article>
-										</div>
-										<div class="text-center">
-											<article class="product light">
-												<figure class="figure-hover-overlay">																		
-													<a href="#"	class="figure-href"></a>
-													<div class="product-new">new</div>
-													<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-													<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-													<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-													<img src="http://placehold.it/400x500" class="img-responsive" alt="">
-												</figure>
-												<div class="product-caption">
-													<div class="block-name">
-														<a href="#" class="product-name">Product name</a>
-														<p class="product-price"><span>₽330</span> ₽320.99</p>
-
-													</div>
-													<div class="product-cart">
-														<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-													</div>
-												</div>
-
-											</article>
 										</div> -->
 										</div>
 									</div>
@@ -579,12 +514,21 @@ Template Name: Main Page
 														<!-- <div class="product-new">new</div> -->
 														<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
 														<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-														<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-														<img src="http://placehold.it/400x500" class="img-responsive" alt="">
+														<?php 
+															$post_thumbnail_id = $product->get_image_id();
+															$thumbnail_src = wp_get_attachment_image_src( $post_thumbnail_id, 'full');
+															
+															$html='<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-overlay img-responsive" alt="" ></img>';
+															echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );	
+															$html='<img src="http://placehold.it/400x500" class="img-responsive" alt="" ></img>';
+															echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );			
+														?>
+														<!-- <img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
+														<img src="http://placehold.it/400x500" class="img-responsive" alt=""> -->
 													</figure>
 													<div class="product-caption">
 														<div class="block-name">
-															<a href="#" class="product-name"><?php echo $product->name; ?></a>
+															<a href="<?php echo get_the_permalink() ?>" class="product-name"><?php echo $product->name; ?></a>
 															<p class="product-price"><span>₽<?php echo $product->regular_price; ?></span> ₽<?php echo $product->sale_price; ?></p>
 														</div>
 														<div class="product-cart">
@@ -601,103 +545,12 @@ Template Name: Main Page
 													<figure class="figure-hover-overlay">																		
 														<a href="#"	class="figure-href"></a>
 														<div class="product-new">new</div>
-														<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-														<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-														<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-														<img src="http://placehold.it/400x500" class="img-responsive" alt="">
-
-													</figure>
-													<div class="product-caption">
-														<div class="block-name">
-															<a href="#" class="product-name">Product name</a>
-															<p class="product-price"><span>₽330</span> ₽320.99</p>
-
-														</div>
-														<div class="product-cart">
-															<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-														</div>
-													</div>
-
-												</article>
-											</div>
-											<div class="text-center">
-												<article class="product light">
-													<figure class="figure-hover-overlay">																		
-														<a href="#"	class="figure-href"></a>
 														<div class="product-sale">17% <br> off</div>
 														<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
 														<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
 														<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
 														<img src="http://placehold.it/400x500" class="img-responsive" alt="">
-													</figure>
-													<div class="product-caption">
-														<div class="block-name">
-															<a href="#" class="product-name">Product name</a>
-															<p class="product-price"><span>₽330</span> ₽320.99</p>
 
-														</div>
-														<div class="product-cart">
-															<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-														</div>
-													</div>
-
-												</article>
-											</div>
-											<div class="text-center">
-												<article class="product light">
-													<figure class="figure-hover-overlay">																		
-														<a href="#"	class="figure-href"></a>
-														<div class="product-new">new</div>
-														<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-														<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-														<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-														<img src="http://placehold.it/400x500" class="img-responsive" alt="">
-
-													</figure>
-													<div class="product-caption">
-														<div class="block-name">
-															<a href="#" class="product-name">Product name</a>
-															<p class="product-price"><span>₽330</span> ₽320.99</p>
-
-														</div>
-														<div class="product-cart">
-															<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-														</div>
-													</div>
-
-												</article>
-											</div>
-											<div class="text-center">
-												<article class="product light">
-													<figure class="figure-hover-overlay">																		
-														<a href="#"	class="figure-href"></a>
-														<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-														<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-														<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-														<img src="http://placehold.it/400x500" class="img-responsive" alt="">
-													</figure>
-													<div class="product-caption">
-														<div class="block-name">
-															<a href="#" class="product-name">Product name</a>
-															<p class="product-price"><span>₽330</span> ₽320.99</p>
-
-														</div>
-														<div class="product-cart">
-															<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-														</div>
-													</div>
-
-												</article>
-											</div>
-											<div class="text-center">
-												<article class="product light">
-													<figure class="figure-hover-overlay">																		
-														<a href="#"	class="figure-href"></a>
-														<div class="product-sale">7% <br> off</div>
-														<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-														<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-														<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-														<img src="http://placehold.it/400x500" class="img-responsive" alt="">
 													</figure>
 													<div class="product-caption">
 														<div class="block-name">
@@ -755,12 +608,21 @@ Template Name: Main Page
 													<!-- <div class="product-sale">11% <br> off</div> -->
 													<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
 													<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-													<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-													<img src="http://placehold.it/400x500" class="img-responsive" alt="">
+													<?php 
+														$post_thumbnail_id = $product->get_image_id();
+														$thumbnail_src = wp_get_attachment_image_src( $post_thumbnail_id, 'full');
+														
+														$html='<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-overlay img-responsive" alt="" ></img>';
+														echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );	
+														$html='<img src="http://placehold.it/400x500" class="img-responsive" alt="" ></img>';
+														echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );			
+													?>
+												<!--<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
+													<img src="http://placehold.it/400x500" class="img-responsive" alt=""> -->
 												</figure>
 												<div class="product-caption">
 													<div class="block-name">
-														<a href="#" class="product-name"><?php echo $product->name; ?></a>
+														<a href="<?php echo get_the_permalink() ?>" class="product-name"><?php echo $product->name; ?></a>
 														<p class="product-price"><span>₽<?php echo $product->regular_price; ?></span> ₽<?php echo $product->sale_price; ?></p>
 
 													</div>
@@ -794,98 +656,7 @@ Template Name: Main Page
 											</div>
 
 										</article>
-									</div>
-									<div class="text-center">
-										<article class="product light wow fadeInUp">
-											<figure class="figure-hover-overlay">																		
-												<a href="#"	class="figure-href"></a>
-												<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-												<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-												<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-												<img src="http://placehold.it/400x500" class="img-responsive" alt="">
-
-											</figure>
-											<div class="product-caption">
-												<div class="block-name">
-													<a href="#" class="product-name">Product name</a>
-													<p class="product-price"><span>₽330</span> ₽320.99</p>
-
-												</div>
-												<div class="product-cart">
-													<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-												</div>
-											</div>
-
-										</article>
-									</div>
-									<div class="text-center">
-										<article class="product light wow fadeInUp">
-											<figure class="figure-hover-overlay">																		
-												<a href="#"	class="figure-href"></a>
-												<div class="product-new">new</div>
-												<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-												<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-												<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-												<img src="http://placehold.it/400x500" class="img-responsive" alt="">
-
-											</figure>
-											<div class="product-caption">
-												<div class="block-name">
-													<a href="#" class="product-name">Product name</a>
-													<p class="product-price"><span>₽330</span> ₽320.99</p>
-
-												</div>
-												<div class="product-cart">
-													<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-												</div>
-											</div>
-
-										</article>
-									</div>
-									<div class="text-center">
-										<article class="product light wow fadeInUp">
-											<figure class="figure-hover-overlay">																		
-												<a href="#"	class="figure-href"></a>
-												<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-												<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-												<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-												<img src="http://placehold.it/400x500" class="img-responsive" alt="">
-											</figure>
-											<div class="product-caption">
-												<div class="block-name">
-													<a href="#" class="product-name">Product name</a>
-													<p class="product-price"><span>₽330</span> ₽320.99</p>
-
-												</div>
-												<div class="product-cart">
-													<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-												</div>
-											</div>
-
-										</article>
-									</div>
-									<div class="text-center">
-										<article class="product light wow fadeInUp">
-											<figure class="figure-hover-overlay">																		
-												<a href="#"	class="figure-href"></a>
-												<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-												<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-												<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-												<img src="http://placehold.it/400x500" class="img-responsive" alt="">
-											</figure>
-											<div class="product-caption">
-												<div class="block-name">
-													<a href="#" class="product-name">Product name</a>
-													<p class="product-price"><span>₽330</span> ₽320.99</p>
-
-												</div>
-												<div class="product-cart">
-													<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-												</div>
-											</div>
-
-										</article>
-									</div> -->
+									</div>-->
 								</div>
 							</div>
 							

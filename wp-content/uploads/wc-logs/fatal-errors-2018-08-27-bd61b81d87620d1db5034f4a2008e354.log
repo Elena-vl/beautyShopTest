@@ -1,0 +1,40 @@
+2018-08-27T10:05:18+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on string in C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\single.php:38
+Stack trace:
+#0 C:\OSPanel\domains\beauty-shop\wp-includes\template-loader.php(74): include()
+#1 C:\OSPanel\domains\beauty-shop\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\beauty-shop\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown
+
+2018-08-27T10:07:21+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on string in C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\single.php:43
+Stack trace:
+#0 C:\OSPanel\domains\beauty-shop\wp-includes\template-loader.php(74): include()
+#1 C:\OSPanel\domains\beauty-shop\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\beauty-shop\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown
+
+2018-08-27T18:27:32+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::get_the_permalink() in C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\tpl_main_page.php:431
+Stack trace:
+#0 C:\OSPanel\domains\beauty-shop\wp-includes\template-loader.php(74): include()
+#1 C:\OSPanel\domains\beauty-shop\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\beauty-shop\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown
+
+2018-08-27T18:27:54+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::get_the_permalink() in C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\tpl_main_page.php:431
+Stack trace:
+#0 C:\OSPanel\domains\beauty-shop\wp-includes\template-loader.php(74): include()
+#1 C:\OSPanel\domains\beauty-shop\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\beauty-shop\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown
+
+2018-08-27T18:48:48+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on string in C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\single.php:39
+Stack trace:
+#0 C:\OSPanel\domains\beauty-shop\wp-includes\template-loader.php(74): include()
+#1 C:\OSPanel\domains\beauty-shop\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\beauty-shop\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown
+
