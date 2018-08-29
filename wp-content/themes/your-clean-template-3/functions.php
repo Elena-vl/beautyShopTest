@@ -5,6 +5,49 @@
  * @subpackage your-clean-template-3
  */
 
+
+/* Carbon Fields begin */
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
+
+add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
+function crb_attach_theme_options()
+{
+	Container::make( 'theme_options', __( 'Редактирование слайдера на главной', 'crb' ) )
+		->add_tab( 'Слайд 1', array(
+			Field::make( 'image', 'header_slider_slide_1_background', 'Фоновое изображение' )
+				->set_value_type( 'url' ),
+			Field::make( 'image', 'header_slider_slide_1_label_1', 'Подпись 1' )
+				->set_value_type( 'url' ),
+			Field::make( 'image', 'header_slider_slide_1_label_2', 'Подпись 2' )
+				->set_value_type( 'url' ),
+			Field::make( 'image', 'header_slider_slide_1_label_3', 'Подпись 3' )
+				->set_value_type( 'url' ),
+		) )
+		->add_tab( 'Слайд 2', array(
+			Field::make( 'image', 'header_slider_slide_2_background', 'Фоновое изображение' )
+				->set_value_type( 'url' ),
+			Field::make( 'image', 'header_slider_slide_2_label_1', 'Подпись 1' )
+				->set_value_type( 'url' ),
+			Field::make( 'image', 'header_slider_slide_2_label_2', 'Подпись 2' )
+				->set_value_type( 'url' ),
+			Field::make( 'image', 'header_slider_slide_2_label_3', 'Подпись 3' )
+				->set_value_type( 'url' ),
+		) )
+		->add_tab( 'Слайд 3', array(
+			Field::make( 'image', 'header_slider_slide_3_background', 'Фоновое изображение' )
+				->set_value_type( 'url' ),
+			Field::make( 'image', 'header_slider_slide_3_label_1', 'Подпись 1' )
+				->set_value_type( 'url' ),
+			Field::make( 'image', 'header_slider_slide_3_label_2', 'Подпись 2' )
+				->set_value_type( 'url' ),
+			Field::make( 'image', 'header_slider_slide_3_label_3', 'Подпись 3' )
+				->set_value_type( 'url' ),
+		) );
+}
+
+/* end Carbon Fields */
+
 /*Подключение CSS-стилей*/
 function add_styles() {
 	wp_register_style('animate', get_template_directory_uri().'/css/animate.css');

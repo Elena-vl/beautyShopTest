@@ -10,7 +10,7 @@ Template Name: Main Page
 					<ul class="list-unstyled">	<!-- SLIDE	-->
 						<li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
 							<!-- MAIN IMAGE -->
-							<img src="<?php get_template_directory_uri() ?>\img\bg1.jpg"	alt="slidebg1"	data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+							<img src="<?php echo carbon_get_theme_option( 'header_slider_slide_1_background' ); ?>"	alt="slidebg1"	data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 							<!-- LAYERS -->
 							<div class="tp-caption skewfromrightshort customout"
 								 data-x="20"
@@ -23,7 +23,7 @@ Template Name: Main Page
 								 data-endeasing="Power4.easeIn"
 								 data-captionhidden="on"
 								 style="z-index: 4">
-								<img src="<?php get_template_directory_uri() ?>\img\preview\slider\1.png" alt="">
+								<img src="<?php echo carbon_get_theme_option( 'header_slider_slide_1_label_1' ); ?>" alt="">
 							</div>
 							<div class="tp-caption skewfromrightshort customout"
 								 data-x="20"
@@ -36,7 +36,7 @@ Template Name: Main Page
 								 data-endeasing="Power4.easeIn"
 								 data-captionhidden="on"
 								 style="z-index: 4">
-								<img src="<?php get_template_directory_uri() ?>\img\preview\slider\1-2.png" alt="">
+								<img src="<?php echo carbon_get_theme_option( 'header_slider_slide_1_label_2' ); ?>" alt="">
 							</div>
 							<div class="tp-caption skewfromrightshort customout"
 								 data-x="20"
@@ -49,9 +49,9 @@ Template Name: Main Page
 								 data-endeasing="Power4.easeIn"
 								 data-captionhidden="on"
 								 style="z-index: 4">
-								<img src="<?php get_template_directory_uri() ?>\img\preview\slider\1-1.png" alt="">
+								<img src="<?php echo carbon_get_theme_option( 'header_slider_slide_1_label_3' ); ?>" alt="">
 							</div>
-							<div class="tp-caption customin customout hidden-xs"
+							<!-- <div class="tp-caption customin customout hidden-xs"
 								 data-x="20"
 								 data-y="430"
 								 data-customin="x:0;y:100;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:3;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:0% 0%;"
@@ -64,8 +64,8 @@ Template Name: Main Page
 								 data-captionhidden="on"
 								 style="z-index: 2">
 								<a href="#" class="btn-home">Каталог</a>
-							</div>
-							<div class="tp-caption customin customout hidden-xs"
+							</div> -->
+							<!-- <div class="tp-caption customin customout hidden-xs"
 								 data-x="145"
 								 data-y="430"
 								 data-customin="x:0;y:100;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:3;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:0% 0%;"
@@ -78,15 +78,28 @@ Template Name: Main Page
 								 data-captionhidden="on"
 								 style="z-index: 2">
 								<a href="#" class="btn-home">О магазине</a>
-							</div>
+							</div> -->
 						</li>
 						<li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
 							<!-- MAIN IMAGE -->
-							<img src="<?php get_template_directory_uri() ?>\img\bg2.jpg"	alt="slidebg1"	data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+							<img src="<?php echo carbon_get_theme_option( 'header_slider_slide_2_background' ); ?>"	alt="slidebg1"	data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 							<!-- LAYERS -->
 							<div class="tp-caption skewfromrightshort customout"
 								 data-x="20"
-								 data-y="204"
+								 data-y="160"
+								 data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+								 data-speed="500"
+								 data-start="300"
+								 data-easing="Power4.easeOut"
+								 data-endspeed="500"
+								 data-endeasing="Power4.easeIn"
+								 data-captionhidden="on"
+								 style="z-index: 4">
+								<img src="<?php echo carbon_get_theme_option( 'header_slider_slide_2_label_1' ); ?>" alt="">
+							</div>
+							<div class="tp-caption skewfromrightshort customout"
+								 data-x="20"
+								 data-y="224"
 								 data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
 								 data-speed="500"
 								 data-start="500"
@@ -94,12 +107,12 @@ Template Name: Main Page
 								 data-endspeed="500"
 								 data-endeasing="Power4.easeIn"
 								 data-captionhidden="on"
-								 style="z-index: 2">
-								<img src="<?php get_template_directory_uri() ?>\img\preview\slider\1-2.png" alt="">
+								 style="z-index: 4">
+								<img src="<?php echo carbon_get_theme_option( 'header_slider_slide_2_label_2' ); ?>" alt="">
 							</div>
 							<div class="tp-caption skewfromrightshort customout"
 								 data-x="20"
-								 data-y="315"
+								 data-y="335"
 								 data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
 								 data-speed="500"
 								 data-start="700"
@@ -107,12 +120,12 @@ Template Name: Main Page
 								 data-endspeed="500"
 								 data-endeasing="Power4.easeIn"
 								 data-captionhidden="on"
-								 style="z-index: 2">
-								<img src="<?php get_template_directory_uri() ?>\img\preview\slider\1-1.png" alt="">
+								 style="z-index: 4">
+								<img src="<?php echo carbon_get_theme_option( 'header_slider_slide_2_label_3' ); ?>" alt="">
 							</div>
-							<div class="tp-caption customin customout hidden-xs"
+							<!-- <div class="tp-caption customin customout hidden-xs"
 								 data-x="20"
-								 data-y="410"
+								 data-y="430"
 								 data-customin="x:0;y:100;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:3;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:0% 0%;"
 								 data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
 								 data-speed="500"
@@ -121,12 +134,12 @@ Template Name: Main Page
 								 data-endspeed="500"
 								 data-endeasing="Power4.easeIn"
 								 data-captionhidden="on"
-								 style="z-index: 3">
+								 style="z-index: 2">
 								<a href="#" class="btn-home">Каталог</a>
-							</div>
-							<div class="tp-caption customin customout hidden-xs"
+							</div> -->
+							<!-- <div class="tp-caption customin customout hidden-xs"
 								 data-x="145"
-								 data-y="410"
+								 data-y="430"
 								 data-customin="x:0;y:100;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:3;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:0% 0%;"
 								 data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
 								 data-speed="500"
@@ -135,11 +148,81 @@ Template Name: Main Page
 								 data-endspeed="500"
 								 data-endeasing="Power4.easeIn"
 								 data-captionhidden="on"
-								 style="z-index: 4">
+								 style="z-index: 2">
 								<a href="#" class="btn-home">О магазине</a>
+							</div> -->
+						</li>
+						<li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
+							<!-- MAIN IMAGE -->
+							<img src="<?php echo carbon_get_theme_option( 'header_slider_slide_3_background' ); ?>"	alt="slidebg2"	data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+							<!-- LAYERS -->
+							<div class="tp-caption skewfromrightshort customout"
+								 data-x="20"
+								 data-y="160"
+								 data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+								 data-speed="500"
+								 data-start="300"
+								 data-easing="Power4.easeOut"
+								 data-endspeed="500"
+								 data-endeasing="Power4.easeIn"
+								 data-captionhidden="on"
+								 style="z-index: 4">
+								<img src="<?php echo carbon_get_theme_option( 'header_slider_slide_3_label_1' ); ?>" alt="">
 							</div>
-
-
+							<div class="tp-caption skewfromrightshort customout"
+								 data-x="20"
+								 data-y="224"
+								 data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+								 data-speed="500"
+								 data-start="500"
+								 data-easing="Power4.easeOut"
+								 data-endspeed="500"
+								 data-endeasing="Power4.easeIn"
+								 data-captionhidden="on"
+								 style="z-index: 4">
+								<img src="<?php echo carbon_get_theme_option( 'header_slider_slide_3_label_2' ); ?>" alt="">
+							</div>
+							<div class="tp-caption skewfromrightshort customout"
+								 data-x="20"
+								 data-y="335"
+								 data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+								 data-speed="500"
+								 data-start="700"
+								 data-easing="Power4.easeOut"
+								 data-endspeed="500"
+								 data-endeasing="Power4.easeIn"
+								 data-captionhidden="on"
+								 style="z-index: 4">
+								<img src="<?php echo carbon_get_theme_option( 'header_slider_slide_3_label_3' ); ?>" alt="">
+							</div>
+							<!-- <div class="tp-caption customin customout hidden-xs"
+								 data-x="20"
+								 data-y="430"
+								 data-customin="x:0;y:100;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:3;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:0% 0%;"
+								 data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+								 data-speed="500"
+								 data-start="1000"
+								 data-easing="Power4.easeOut"
+								 data-endspeed="500"
+								 data-endeasing="Power4.easeIn"
+								 data-captionhidden="on"
+								 style="z-index: 2">
+								<a href="#" class="btn-home">Каталог</a>
+							</div> -->
+							<!-- <div class="tp-caption customin customout hidden-xs"
+								 data-x="145"
+								 data-y="430"
+								 data-customin="x:0;y:100;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:3;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:0% 0%;"
+								 data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+								 data-speed="500"
+								 data-start="1200"
+								 data-easing="Power4.easeOut"
+								 data-endspeed="500"
+								 data-endeasing="Power4.easeIn"
+								 data-captionhidden="on"
+								 style="z-index: 2">
+								<a href="#" class="btn-home">О магазине</a>
+							</div> -->
 						</li>
 					</ul>
 					<div class="revolutiontimer"></div>
@@ -532,7 +615,8 @@ Template Name: Main Page
 															<p class="product-price"><span>₽<?php echo $product->regular_price; ?></span> ₽<?php echo $product->sale_price; ?></p>
 														</div>
 														<div class="product-cart">
-															<a href="#"><i class="fa fa-shopping-cart"></i> </a>
+															<!-- <a href="#"><i class="fa fa-shopping-cart"></i> </a> -->
+															<?php woocommerce_template_loop_add_to_cart(); ?>
 														</div>
 													</div>
 												</div>
@@ -627,14 +711,15 @@ Template Name: Main Page
 
 													</div>
 													<div class="product-cart">
-														<a href="#"><i class="fa fa-shopping-cart"></i> </a>
+														<!-- <a href="#"><i class="fa fa-shopping-cart"></i> </a> -->
+														<?php woocommerce_template_loop_add_to_cart(); ?>
 													</div>
 												</div>
 											</div>
 										</div>
 									<?php }; ?>
-										<?php endwhile; ?>
-										<?php wp_reset_postdata(); ?>
+									<?php endwhile; ?>
+									<?php wp_reset_postdata(); ?>
 								<!--<div class="text-center">
 										<article class="product light wow fadeInUp">
 											<figure class="figure-hover-overlay">																		
