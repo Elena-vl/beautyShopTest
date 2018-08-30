@@ -151,6 +151,7 @@ Template Name: Product Detail
 											<p class="product-price">$850</p>
 										</div>
 										<div class="shopping-cart-buttons">
+											<label class="pull-left">Количество:</label>
 <!-- 											<form class="cart" method="post" enctype='multipart/form-data'>
 											<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 											 	<label class="pull-left">Количество:</label>
@@ -194,8 +195,10 @@ Template Name: Product Detail
 
 													do_action( 'woocommerce_after_add_to_cart_quantity' );
 													?>
-
-													<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt ajax_add_to_cart"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+													<?php woocommerce_template_loop_add_to_cart(); ?>
+													<a href="#" title="Wishlist"><i class="fa fa-heart-o"></i></a>
+												<a href="#" title="Compare"><i class="fa fa-random"></i></a>
+													<!-- <button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt ajax_add_to_cart"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button> -->
 
 													<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 												</form>			
@@ -203,8 +206,7 @@ Template Name: Product Detail
 												<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
 
 											<?php endif; ?>		
-												<a href="#" title="Wishlist"><i class="fa fa-heart-o"></i></a>
-												<a href="#" title="Compare"><i class="fa fa-random"></i></a>
+												
 											</form>
 
 											<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>

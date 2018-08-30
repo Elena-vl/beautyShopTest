@@ -516,19 +516,7 @@ Template Name: Main Page
 
 														</div>
 														<div class="product-cart">
-															<!-- <a type="submit" class="shoping"  value="<?php echo esc_attr( $product->get_id() ); ?>" > -->
-														 	<!-- <i class="fa fa-shopping-cart"></i> -->
-														 	<!-- <?php echo $product->single_add_to_cart_text(); ?> -->
-														 	<!-- <?php do_action( 'woocommerce_after_add_to_cart_button' ); ?> -->
-															<!-- <?php echo esc_html( $product->single_add_to_cart_text() ); ?> -->
-															<!-- </a> -->
-														
-															<!-- <a href="#"> 
-																<?php $woocommerce->cart->add_to_cart( $product->id ); ?>-->
-																<i class="fa fa-shopping-cart">
-																	<?php woocommerce_template_loop_add_to_cart(); ?>
-																</i>
-															<!-- </a> -->
+															<?php woocommerce_template_loop_add_to_cart(); ?>
 														</div>
 													</div>
 												</div>

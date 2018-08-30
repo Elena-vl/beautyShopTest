@@ -6,7 +6,7 @@
  */
 get_header(); // подключаем header.php ?> 
 <section>
-	<div class="container">
+	<div class="container" style="margin-top: 30vh;">
 		<div class="row">
 			<div class="<?php content_class_by_sidebar(); // функция подставит класс в зависимости от того есть ли сайдбар, лежит в functions.php ?>">
 				<h1><?php // заголовок архивов

@@ -10,6 +10,7 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
+
 add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 function crb_attach_theme_options()
 {
@@ -294,4 +295,10 @@ if ( ! function_exists( 'cart_link' ) ) {
     return substr($content, 0, 100).'...';
   }
 
+// add_filter( 'template_include', 'echo_cur_tplfile', 99 );
+// function echo_cur_tplfile( $template ){
+// 	echo '<span style="color:red">'. wp_basename( $template ) .'</span>';
+// 	return $template; 
+// } 
+remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 20);
  ?>
