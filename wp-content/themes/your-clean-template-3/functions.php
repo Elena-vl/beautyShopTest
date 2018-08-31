@@ -275,16 +275,15 @@ if (!function_exists('content_class_by_sidebar')) { // если ф-я уже е�
 
 if ( ! function_exists( 'cart_link' ) ) {
 
- function cart_link() {
- ?>
-<!-- <a class="cart-contents" href="/cart/" title="<?php _e( 'Перейти в корзину' ); ?>"><i class="fa fa-shopping-cart"></i><?php echo sprintf (_n( '%d товар', '%d товаров', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?> - <?php echo WC()->cart->get_cart_total(); ?></a>  -->
-<a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>">
-	<i class="fa fa-shopping-cart"></i>
-	<?php echo sprintf(_n('%d товар', '%d товаров', WC()->cart->cart_contents_count, 'woothemes'), WC()->cart->cart_contents_count);?> - <?php echo WC()->cart->get_cart_total(); ?>
-</a>
- <?php
- $fragments['a.cart-customlocation'] = ob_get_clean();
- }
+	function cart_link() {
+	?>
+		<a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('Перейти в корзину', 'woothemes'); ?>">
+			<!-- <i class="fa fa-shopping-cart"></i> -->
+			<?php echo sprintf(_n('%d товар', '%d товаров', WC()->cart->cart_contents_count, 'woothemes'), WC()->cart->cart_contents_count);?> - <?php echo WC()->cart->get_cart_total(); ?>
+		</a>
+	 	<?php
+	 	$fragments['a.cart-customlocation'] = ob_get_clean();
+	}
 }
 
   add_filter("the_content", "plugin_myContentFilter");
@@ -295,10 +294,4 @@ if ( ! function_exists( 'cart_link' ) ) {
     return substr($content, 0, 100).'...';
   }
 
-// add_filter( 'template_include', 'echo_cur_tplfile', 99 );
-// function echo_cur_tplfile( $template ){
-// 	echo '<span style="color:red">'. wp_basename( $template ) .'</span>';
-// 	return $template; 
-// } 
-remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 20);
  ?>

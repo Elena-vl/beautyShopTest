@@ -115,57 +115,58 @@
 								</div>
 								<div class="col-md-4">
 									<div class="header-mini-cart  pull-right">
-
-										<a href="woocommerce_cart"  data-toggle="dropdown">
-											Корзина
-											<span> <?php cart_link(); ?><?php the_widget( 'WC_Widget_Cart', 'title=' ); ?> </span>
-											<!-- <span>0 товар(ов)-0.00</span> -->
+										<a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" 
+											title="<?php _e('Перейти в корзину', 'woothemes'); ?>" data-toggle="dropdown"> Корзина
+											<span>
+												<?php echo sprintf(_n('%d товар', '%d товаров', WC()->cart->cart_contents_count,        'woothemes'), WC()->cart->cart_contents_count);?> 
+												<?php echo WC()->cart->get_cart_total(); ?>
+											</span>
 										</a>
-										<!-- <div class="dropdown-menu shopping-cart-content pull-right">
+									<div class="dropdown-menu shopping-cart-content pull-right">
 											<div class="shopping-cart-items">
-												<div class="item pull-left">
+												<?php 
+													global $woocommerce;
+													$items = $woocommerce->cart->get_cart();
+													foreach($items as $item => $values) { 
+														$_product = $values['data']->post; 
+														$price = get_post_meta($values['product_id'] , '_price', true);
+														$count = $values['quantity'];
+														?>
+														<div class="item pull-left">
+															<img src="http://placehold.it/56x70" alt="Название товара" class="pull-left">
+															<div class="pull-left">
+																<p><?php echo $_product->post_title; ?></p>
+																<p><?php echo $price; ?>&nbsp;<strong>x <?php echo $count; ?></strong></p>
+															</div>
+															<!-- <a href="" class="trash"><i class="fa fa-trash-o pull-left"></i></a> -->
+															<a href="" class="trash">
+															<?php WC()->cart->remove_cart_item( $values['product_id'] ); ?>
+															<i class="fa fa-trash-o pull-left"></i></a>
+														</div>
+														<?php
+														echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
+															'<a href="/cart" class="remove remove_from_cart_button"  data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">&times;</a>',
+															esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+															__( 'Remove this item', 'woocommerce' ),
+															esc_attr( $product_id ),
+															esc_attr( $cart_item_key ),
+															esc_attr( $_product->get_sku() )
+														), $cart_item_key );
+														?>
+														<?php
+												    } 
+												?>
+<!-- 												<div class="item pull-left">
 													<img src="http://placehold.it/56x70" alt="Название товара" class="pull-left">
 													<div class="pull-left">
 														<p>Название товара</p>
 														<p>₽251.00&nbsp;<strong>x 3</strong></p>
 													</div>
 													<a href="" class="trash"><i class="fa fa-trash-o pull-left"></i></a>
-												</div>
-												<div class="item pull-left">
-													<img src="http://placehold.it/56x70" alt="Название товара" class="pull-left">
-													<div class="pull-left">
-														<p>Название товара</p>
-														<p>₽77.05&nbsp;<strong>x 1</strong></p>
-													</div>
-													<a href="" class="trash"><i class="fa fa-trash-o pull-left"></i></a>
-												</div>
-												<div class="item pull-left">
-													<img src="http://placehold.it/56x70" alt="Название товара" class="pull-left">
-													<div class="pull-left">
-														<p>Название товара</p>
-														<p>₽50.10&nbsp;<strong>x 8</strong></p>
-													</div>
-													<a href="" class="trash"><i class="fa fa-trash-o pull-left"></i></a>
-												</div>
-												<div class="total pull-left">
-													<table>
-														<tbody class="pull-right">
-															<tr>
-																<td></td>
-																<td></td>
-															</tr>
-															<tr class="color-active">
-																<td><b>Всего:</b></td>
-																<td><b>₽575.99</b></td>
-															</tr>
-														</tbody>
-													</table>
-													<a href="#" class="btn-read pull-right">В корзину</a>
-													<a href="#" class="btn-read pull-right">Заказать</a>
-												</div>
-											</div>
-										</div> -->
-									</div><!-- /header-mini-cart -->
+												</div> -->
+											</div>		
+									</div>
+									</div>	<!--header-mini-cart -->
 									<div class="top-icons">
 										<div class="top-icon"><a href="" title="Оповещения"><i class="fa fa-bell"></i></a><span>12</span></div>
 									</div>
