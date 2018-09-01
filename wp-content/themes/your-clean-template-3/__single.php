@@ -44,7 +44,7 @@ Template Name: Product Detail
 
 									?>
 <!-- 									<img id="product-zoom"	src='img/preview/product/small/product2.jpg' data-zoom-image="img/preview/product/large/product2.jpg" alt=""> -->
-									<!-- <div id="gal1">
+									<div id="gal1">
 
 										<a href="javascript:;" data-image="img/preview/product/small/product1.jpg" data-zoom-image="img/preview/product/large/product1.jpg">
 											<img id="img_01" src="img/preview/product/thumb/product1.jpg" alt="">
@@ -57,7 +57,7 @@ Template Name: Product Detail
 										<a href="javascript:;"	data-image="img/preview/product/small/product3.jpg" data-zoom-image="img/preview/product/large/product3.jpg">
 											<img id="img_01" src="img/preview/product/thumb/product3.jpg" />
 										</a>
-									</div> -->
+									</div>
 								</div>
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -65,12 +65,12 @@ Template Name: Product Detail
 
 								<div class="product-detail-section">
 									<h3><span><?php the_title() ?></h3>
-									<!-- <div class="product-rating">
+									<div class="product-rating">
 										<div class="stars">
 											<span class="star"></span><span class="star active"></span><span class="star active"></span><span class="star active"></span><span class="star active"></span>
 										</div>
 										<a href="" class="review">150 Reviews</a> 
-									</div> -->
+									</div>
 
 									<div class="product-information">
 										<div class="clearfix"> 
@@ -154,7 +154,7 @@ Template Name: Product Detail
 											<label class="pull-left">Количество:</label>
 <!-- 											<form class="cart" method="post" enctype='multipart/form-data'>
 											<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
-											 	
+											 	<label class="pull-left">Количество:</label>
 												<?php if ( ! $product->is_sold_individually() )
 													 woocommerce_quantity_input( array(
 														'min_value' => apply_filters( 'woocommerce_quantity_input_min', 1, $product ),
@@ -195,8 +195,10 @@ Template Name: Product Detail
 
 													do_action( 'woocommerce_after_add_to_cart_quantity' );
 													?>
-
-													<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt ajax_add_to_cart"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+													<?php woocommerce_template_loop_add_to_cart(); ?>
+													<a href="#" title="Wishlist"><i class="fa fa-heart-o"></i></a>
+												<a href="#" title="Compare"><i class="fa fa-random"></i></a>
+													<!-- <button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt ajax_add_to_cart"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button> -->
 
 													<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 												</form>			
@@ -204,8 +206,7 @@ Template Name: Product Detail
 												<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
 
 											<?php endif; ?>		
-												<!-- <a href="#" title="Wishlist"><i class="fa fa-heart-o"></i></a>
-												<a href="#" title="Compare"><i class="fa fa-random"></i></a> -->
+												
 											</form>
 
 											<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
@@ -226,7 +227,7 @@ Template Name: Product Detail
 						<ul class="nav nav-pills	nav-justified">
 							<li class="active"><a href="#description" data-toggle="tab">Описание</a></li>
 							<!-- <li><a href="#additional" data-toggle="tab" class="disabled">Дополнительно</a></li> -->
-							<!-- <li><a href="#review" data-toggle="tab">Комментарий</a></li> -->
+							<li><a href="#review" data-toggle="tab">Комментарии</a></li>
 						</ul>
 
 						<!-- Tab panes -->
@@ -239,7 +240,7 @@ Template Name: Product Detail
 									<?php echo $product->description; ?>
 								</p>
 							</div>
-							<div class="tab-pane" id="additional">
+							<!-- <div class="tab-pane" id="additional">
 								<br>
 								<div class="row">
 									<div class="col-md-4">
@@ -278,8 +279,8 @@ Template Name: Product Detail
 									</div>
 								</div>
 
-							</div>
-							<div class="tab-pane" id="review">
+							</div> -->
+							<!-- <div class="tab-pane" id="review"> -->
 								<!-- <br> -->
 								<!-- <div class="row">
 									<div class="col-md-12">
@@ -355,10 +356,10 @@ Template Name: Product Detail
 									<div class="row">
 
 										<?php 
-										global $withcomments;
-										$withcomments = true;
+										// global $withcomments;
+										// $withcomments = true;
 
-										if (comments_open() || get_comments_number()) comments_template('', true); 
+										// if (comments_open() || get_comments_number()) comments_template('', true); 
 										// если комментирование открыто - мы покажем список комментариев и форму, если закрыто, но кол-во комментов > 0 - покажем только список комментариев 
 										?> 
 									
@@ -444,9 +445,9 @@ Template Name: Product Detail
 							</div>
 						</div> -->
 						<figure class="figure-hover-overlay">
-							<!-- <a href="#"	class="figure-href"></a> -->
+							<a href="#"	class="figure-href"></a>
 							<!-- <div class="product-sale-time"><p class="time"></p></div> -->
-							<!-- <a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a> -->
+							<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
 							<?php the_widget( 'berocket_products_of_day_widget'); ?>
 						</figure>
 					</div>
@@ -531,12 +532,12 @@ Template Name: Product Detail
 									<a href="<?php echo get_the_permalink() ?>" class="product-name"><?php echo $product->name; ?></a>
 									<p class="product-price"><span>₽<?php echo $product->regular_price; ?></span> ₽<?php echo $product->regular_price; ?></p>
 								</div>
-								<!-- <div class="product-rating">
+								<div class="product-rating">
 									<div class="stars">
 										<span class="star active"></span><span class="star active"></span><span class="star active"></span><span class="star active"></span><span class="star active"></span>
 									</div>
 									<a href="" class="review">8 Reviews</a>
-								</div> -->
+								</div>
 								<p class="description"><?php echo $product->description; ?></p>
 							</div>
 						</div>

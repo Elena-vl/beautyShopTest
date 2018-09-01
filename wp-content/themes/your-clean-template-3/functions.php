@@ -277,9 +277,12 @@ if ( ! function_exists( 'cart_link' ) ) {
 
 	function cart_link() {
 	?>
-		<a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('Перейти в корзину', 'woothemes'); ?>">
-			<!-- <i class="fa fa-shopping-cart"></i> -->
-			<?php echo sprintf(_n('%d товар', '%d товаров', WC()->cart->cart_contents_count, 'woothemes'), WC()->cart->cart_contents_count);?> - <?php echo WC()->cart->get_cart_total(); ?>
+		<a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" 
+			title="<?php _e('Перейти в корзину', 'woothemes'); ?>" data-toggle="dropdown"> Корзина
+			<span>
+				<?php echo sprintf(_n('%d товар', '%d товаров', WC()->cart->cart_contents_count,        'woothemes'), WC()->cart->cart_contents_count);?> 
+				<?php echo WC()->cart->get_cart_total(); ?>
+			</span>
 		</a>
 	 	<?php
 	 	$fragments['a.cart-customlocation'] = ob_get_clean();
@@ -294,4 +297,21 @@ if ( ! function_exists( 'cart_link' ) ) {
     return substr($content, 0, 100).'...';
   }
 
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+	ob_start();
+	?>
+	<a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" 
+		title="<?php _e('Перейти в корзину', 'woothemes'); ?>" data-toggle="dropdown"> Корзина
+		<span>
+			<?php echo sprintf(_n('%d товар', '%d товаров', WC()->cart->cart_contents_count,        'woothemes'), WC()->cart->cart_contents_count);?> 
+			<?php echo WC()->cart->get_cart_total(); ?>
+		</span>
+	</a> 
+	<?php
+	
+	$fragments['a.cart-contents'] = ob_get_clean();
+	
+	return $fragments;
+}
  ?>

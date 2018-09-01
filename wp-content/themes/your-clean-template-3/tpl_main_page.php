@@ -295,9 +295,9 @@ Template Name: Main Page
 
 							<article class="product light last-sale">
 								<figure class="figure-hover-overlay">
-									<a href="#"  class="figure-href"></a>
+									<!-- <a href="#"  class="figure-href"></a> -->
 									<!-- <div class="product-sale-time"><p class="time"></p></div> -->
-									<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
+									<!-- <a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a> -->
 									<?php the_widget( 'berocket_products_of_day_widget'); ?>
 								</figure>
 								<!-- <figure class="figure-hover-overlay">																	<a href="#"  class="figure-href"></a>
@@ -470,8 +470,8 @@ Template Name: Main Page
 
 												$args	 = array(
 													'post_type'		 => 'product',
-													'posts_per_page' => 3,
-													'product_cat'	 => $term_slug,
+													// 'posts_per_page' => 3,
+													// 'product_cat'	 => $term_slug,
 													
 													'tax_query'		 => array(
 														array(
@@ -495,8 +495,8 @@ Template Name: Main Page
 													<figure class="figure-hover-overlay">			
 														<a href="#"	class="figure-href"></a>
 														<!-- <div class="product-sale">11% <br> off</div> -->
-														<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-														<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
+														<!-- <a href="#" class="product-compare"><i class="fa fa-random"></i></a>
+														<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a> -->
 														<?php 
 															$post_thumbnail_id = $product->get_image_id();
 															$thumbnail_src = wp_get_attachment_image_src( $post_thumbnail_id, 'full');
@@ -524,32 +524,6 @@ Template Name: Main Page
 											<?php }; ?>
 											<?php endwhile; ?>
 											<?php wp_reset_postdata(); ?>
-
-										<!--<div class="text-center">
-											<div class="product light">
-												<figure class="figure-hover-overlay">																		
-													<a href="#"	class="figure-href"></a>
-													<div class="product-sale">11% <br> off</div>
-													<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-													<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-													<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-													<img src="http://placehold.it/400x500" class="img-responsive" alt="">
-												</figure>
-												<div class="product-caption">
-													<div class="block-name">
-														<a href="#" class="product-name">Product name</a>
-														<p class="product-price"><span>₽330</span> ₽320.99</p>
-
-													</div>
-													<div class="product-cart">
-														<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-													</div>
-
-
-												</div>
-
-											</div>
-										</div> -->
 										</div>
 									</div>
 
@@ -559,8 +533,8 @@ Template Name: Main Page
 											<?php
 											$args	 = array(
 												'post_type'		 => 'product',
-												'posts_per_page' => 3,
-												'product_cat'	 => $term_slug,
+												// 'posts_per_page' => 3,
+												// 'product_cat'	 => $term_slug,
 												
 												'tax_query'		 => array(
 													array(
@@ -572,19 +546,18 @@ Template Name: Main Page
 												),
 											);
 											$loop	 = new WP_Query( $args );
-
 											while ( $loop->have_posts() ) : $loop->the_post();
 												global $product;
 												//избранные
-												if( has_term(21 , 'product_tag') ){
+												if( has_term(42 , 'product_tag') ){
 											?>
 											<div class="text-center">
 												<div class="product light">
 													<figure class="figure-hover-overlay">			
 														<a href="#"	class="figure-href"></a>
 														<!-- <div class="product-new">new</div> -->
-														<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-														<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
+														<!-- <a href="#" class="product-compare"><i class="fa fa-random"></i></a>
+														<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a> -->
 														<?php 
 															$post_thumbnail_id = $product->get_image_id();
 															$thumbnail_src = wp_get_attachment_image_src( $post_thumbnail_id, 'full');
@@ -611,32 +584,7 @@ Template Name: Main Page
 											</div>
 											<?php }; ?>
 											<?php endwhile; ?>
-											<?php wp_reset_postdata(); ?>
-											<!-- <div class="text-center">
-												<article class="product light">
-													<figure class="figure-hover-overlay">																		
-														<a href="#"	class="figure-href"></a>
-														<div class="product-new">new</div>
-														<div class="product-sale">17% <br> off</div>
-														<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-														<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-														<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-														<img src="http://placehold.it/400x500" class="img-responsive" alt="">
-
-													</figure>
-													<div class="product-caption">
-														<div class="block-name">
-															<a href="#" class="product-name">Product name</a>
-															<p class="product-price"><span>₽330</span> ₽320.99</p>
-
-														</div>
-														<div class="product-cart">
-															<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-														</div>
-													</div>
-
-												</article>
-											</div> -->
+											<?php wp_reset_postdata(); ?>							
 										</div>
 									</div>
 								</div>				 
@@ -651,35 +599,36 @@ Template Name: Main Page
 										<a href="javascript:;" data-role="next" class="next"><i class="fa fa-angle-right"></i></a>
 									</div>
 								</div>
-								<div id="owl-summer-sale"	class="owl-carousel">
+								<div id="owl-summer-sale" class="owl-carousel">
 									<?php
-											$args	 = array(
-												'post_type'		 => 'product',											
-												'tax_query'		 => array(
-													array(
-														'taxonomy'	 => 'product_visibility',
-														'field'		 => 'name',
-														'terms'		 => 'exclude-from-catalog',
-														'operator'	 => 'NOT IN',
-														// 'product_tag' => $term,
-													),
+										$args	 = array(
+											'post_type'		 => 'product',
+											// 'posts_per_page' => 3,
+											// 'product_cat'	 => $term_slug,
+											
+											'tax_query'		 => array(
+												array(
+													'taxonomy'	 => 'product_visibility',
+													'field'		 => 'name',
+													'terms'		 => 'exclude-from-catalog',
+													'operator'	 => 'NOT IN',
 												),
-											);
-											$loop	 = new WP_Query( $args );
+											),
+										);
+										$loop	 = new WP_Query( $args );
 
-											while ( $loop->have_posts() ) : $loop->the_post();
-												global $product;
-												//эксклюзив
-												if( has_term(23 , 'product_tag') ){
-										?>
-
+										while ( $loop->have_posts() ) : $loop->the_post();
+											global $product;
+											//эксклюзив
+											if( has_term(23 , 'product_tag') ){
+									?>
 										<div class="text-center">
-											<div class="product light">
+											<article class="product light wow fadeInUp">
 												<figure class="figure-hover-overlay">			
 													<a href="#"	class="figure-href"></a>
-													<!-- <div class="product-sale">11% <br> off</div> -->
-													<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-													<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
+													<!-- <div class="product-new">new</div> -->
+													<!-- <a href="#" class="product-compare"><i class="fa fa-random"></i></a>
+													<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a> -->
 													<?php 
 														$post_thumbnail_id = $product->get_image_id();
 														$thumbnail_src = wp_get_attachment_image_src( $post_thumbnail_id, 'full');
@@ -689,52 +638,29 @@ Template Name: Main Page
 														$html='<img src="http://placehold.it/400x500" class="img-responsive" alt="" ></img>';
 														echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );			
 													?>
-												<!--<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
+													<!-- <img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
 													<img src="http://placehold.it/400x500" class="img-responsive" alt=""> -->
 												</figure>
 												<div class="product-caption">
 													<div class="block-name">
 														<a href="<?php echo get_the_permalink() ?>" class="product-name"><?php echo $product->name; ?></a>
 														<p class="product-price"><span>₽<?php echo $product->regular_price; ?></span> ₽<?php echo $product->sale_price; ?></p>
-
 													</div>
 													<div class="product-cart">
 														<!-- <a href="#"><i class="fa fa-shopping-cart"></i> </a> -->
 														<?php woocommerce_template_loop_add_to_cart(); ?>
 													</div>
 												</div>
-											</div>
+											</article>
 										</div>
 									<?php }; ?>
 									<?php endwhile; ?>
 									<?php wp_reset_postdata(); ?>
-								<!--<div class="text-center">
-										<article class="product light wow fadeInUp">
-											<figure class="figure-hover-overlay">																		
-												<a href="#"	class="figure-href"></a>
-												<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-												<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-												<img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
-												<img src="http://placehold.it/400x500" class="img-responsive" alt="">
-											</figure>
-											<div class="product-caption">
-												<div class="block-name">
-													<a href="#" class="product-name">Product name</a>
-													<p class="product-price"><span>₽330</span> ₽320.99</p>
-
-												</div>
-												<div class="product-cart">
-													<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-												</div>
-											</div>
-
-										</article>
-									</div>-->
 								</div>
 							</div>
 							
 							<!-- Отзывы покупателей -->
-							<div class="block">
+							<!-- <div class="block">
 								<div class="header-for-light">
 									<h4 class="wow fadeInRight animated" data-wow-duration="1s">Отзывы <span>покупателей</span></h4>
 								</div>
@@ -750,29 +676,7 @@ Template Name: Main Page
 												<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, nonummy nibh euismod tincidunt ut lctetuer adipiscing eli nonummy nibh euismod dolore magna aliquam erat volutpat. </p>
 											</div>
 										</li>
-										<!--<li class="media">
-											<a class="pull-left" href="#">
-												<div class="pull-left">
-													<img src="http://placehold.it/80x80" alt="image">
-												</div>
-											</a>
-											<div class="media-body">
-												<h5 class="media-heading">Mosaic<span class="time-right">August 7, 2014 at 11.07 pm</span></h5>
-												<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, nonummy nibh euismod tincidunt ut lctetuer adipiscing eli nonummy nibh euismod dolore magna aliquam erat volutpat. </p>
-											</div>
-										</li>
-										<li class="media">
-											<a class="pull-left" href="#">
-												<div class="pull-left">
-													<img src="http://placehold.it/80x80" alt="image">
-												</div>
-											</a>
-											<div class="media-body">
-												<h5 class="media-heading">Mosaic<span class="time-right">August 7, 2014 at 11.07 pm</span></h5>
-												<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, nonummy nibh euismod tincidunt ut lctetuer adipiscing eli nonummy nibh euismod dolore magna aliquam erat volutpat. </p>
-											</div>
-										</li> -->
-										<!-- </div> -->
+										
 											
 									<div class="block-form box-border">
 										<div class="header-for-light">
@@ -795,7 +699,7 @@ Template Name: Main Page
 										</form>
 									</div>
 								</ul>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>	

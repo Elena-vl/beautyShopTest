@@ -1185,7 +1185,7 @@ if ( ! function_exists( 'woocommerce_template_loop_add_to_cart' ) ) {
 			$defaults = array(
 				'quantity'   => 1,
 				'class'      => implode( ' ', array_filter( array(
-					'button',
+					// 'button',
 					'product_type_' . $product->get_type(),
 					$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
 					$product->supports( 'ajax_add_to_cart' ) ? 'ajax_add_to_cart' : '',

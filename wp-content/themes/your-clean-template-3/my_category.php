@@ -12,19 +12,19 @@
 			<div class="row">
 
 				<div class="col-md-9">
-					<div class="block-breadcrumb">
+					<!-- <div class="block-breadcrumb">
 						<ul class="breadcrumb">
 							<li><a href="#">Home</a></li>
 							<li><a href="#">Pages</a></li>
 							<li class="active">Products grid</li>
 						</ul>
-					</div>
+					</div> -->
 
 					<div class="header-for-light">
 						<h1 class="wow fadeInRight animated" data-wow-duration="1s"><span><?php the_title() ?></h1>
 
 					</div>
-					<div class="block-products-modes color-scheme-2">
+					<!-- <div class="block-products-modes color-scheme-2">
 						<div class="row">
 							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 								<div class="product-view-mode">
@@ -59,7 +59,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="row">
 						<?php
 						global $post;
@@ -81,8 +81,8 @@
 									<a href="#"	class="figure-href"></a>
 									<!-- <div class="product-new">new</div>
 									<div class="product-sale">7% <br> off</div> -->
-									<a href="#" class="product-compare"><i class="fa fa-random"></i></a>
-									<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
+									<!-- <a href="#" class="product-compare"><i class="fa fa-random"></i></a>
+									<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a> -->
 									<?php 
 										$post_thumbnail_id = $product->get_image_id();
 										$thumbnail_src = wp_get_attachment_image_src( $post_thumbnail_id, 'full');
@@ -107,12 +107,12 @@
 										
 										<!-- <a href=""><i class="fa fa-shopping-cart"></i> </a> -->
 									</div>
-									<div class="product-rating">
+									<!-- <div class="product-rating">
 										<div class="stars">
 											<span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
 										</div>
 										<a href="" class="review">8 Reviews</a>
-									</div>
+									</div> -->
 									<p class="description"><?php the_excerpt() ?></p>
 								</div>
 							</article> 
@@ -230,9 +230,9 @@
 							</div>
 						</div> -->
 						<figure class="figure-hover-overlay">
-							<a href="#"	class="figure-href"></a>
+							<!-- <a href="#"	class="figure-href"></a> -->
 							<!-- <div class="product-sale-time"><p class="time"></p></div> -->
-							<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
+							<!-- <a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a> -->
 							<?php the_widget( 'berocket_products_of_day_widget'); ?>
 						</figure>
 					</div>

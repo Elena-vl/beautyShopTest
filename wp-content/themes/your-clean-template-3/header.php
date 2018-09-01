@@ -70,7 +70,7 @@
 						<div class="pull-right">
 							<!-- header-account menu -->
 							<div id="account-menu" class="pull-right">
-								<a href="" class="account-menu-title"><i class="fa fa-user"></i>&nbsp; Профиль <i class="fa fa-angle-down"></i> </a>
+								<a href="<?php site_url() ?>/my-account" class="account-menu-title"> <i class="fa fa-user"></i>&nbsp; Профиль <i class="fa fa-angle-down"></i> </a>
 								<ul class="list-unstyled account-menu-item">
 									<li><a href=""><i class="fa fa-list"></i>&nbsp; Контакты</a></li>
 									<li><a href=""><i class="fa fa-heart"></i>&nbsp; Желания</a></li>
@@ -102,7 +102,8 @@
 						<div id="container-fixed">
 							<div class="row">
 								<div class="col-md-3">
-									<a href="index.html" class="header-logo"> <img src="<?php get_template_directory_uri() ?>\img\logo-big-shop.png" alt="Интернет магазин профессиональной косметики"></a>		
+									<a href="<?php echo get_site_url(); ?>" class="header-logo"> 
+										<img src="<?php get_template_directory_uri() ?>\img\logo-big-shop.png" alt="Интернет магазин профессиональной косметики"></a>		
 								</div>
 
 								<div class="col-md-5">
@@ -124,13 +125,15 @@
 										</a>
 									<div class="dropdown-menu shopping-cart-content pull-right">
 											<div class="shopping-cart-items">
+											<?php if ( ! WC()->cart->is_empty() ) : ?>
 												<?php 
 													global $woocommerce;
 													$items = $woocommerce->cart->get_cart();
-													foreach($items as $item => $values) { 
-														$_product = $values['data']->post; 
-														$price = get_post_meta($values['product_id'] , '_price', true);
-														$count = $values['quantity'];
+													
+													foreach($items as $cart_item_key => $cart_item) { 
+														$_product = $cart_item['data']->post; 
+														$price = get_post_meta($cart_item['product_id'] , '_price', true);
+														$count = $cart_item['quantity'];
 														?>
 														<div class="item pull-left">
 															<img src="http://placehold.it/56x70" alt="Название товара" class="pull-left">
@@ -139,24 +142,11 @@
 																<p><?php echo $price; ?>&nbsp;<strong>x <?php echo $count; ?></strong></p>
 															</div>
 															<!-- <a href="" class="trash"><i class="fa fa-trash-o pull-left"></i></a> -->
-															<a href="" class="trash">
-															<?php WC()->cart->remove_cart_item( $values['product_id'] ); ?>
-															<i class="fa fa-trash-o pull-left"></i></a>
-														</div>
-														<?php
-														echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-															'<a href="/cart" class="remove remove_from_cart_button"  data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">&times;</a>',
-															esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-															__( 'Remove this item', 'woocommerce' ),
-															esc_attr( $product_id ),
-															esc_attr( $cart_item_key ),
-															esc_attr( $_product->get_sku() )
-														), $cart_item_key );
-														?>
+														</div>													
 														<?php
 												    } 
 												?>
-<!-- 												<div class="item pull-left">
+<!-- 											<div class="item pull-left">
 													<img src="http://placehold.it/56x70" alt="Название товара" class="pull-left">
 													<div class="pull-left">
 														<p>Название товара</p>
@@ -164,12 +154,15 @@
 													</div>
 													<a href="" class="trash"><i class="fa fa-trash-o pull-left"></i></a>
 												</div> -->
-											</div>		
+											</div>	
+											<?php else : ?>
+												<p class="woocommerce-mini-cart__empty-message"><?php _e( 'No products in the cart.', 'woocommerce' ); ?></p>
+											<?php endif; ?>	
 									</div>
 									</div>	<!--header-mini-cart -->
-									<div class="top-icons">
+									<!-- <div class="top-icons">
 										<div class="top-icon"><a href="" title="Оповещения"><i class="fa fa-bell"></i></a><span>12</span></div>
-									</div>
+									</div> -->
 								</div>
 							</div>
 						</div>
@@ -181,7 +174,7 @@
 						<div class="container">
 							<div class="navbar-header">
 								<button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-								<a href="index.html" class="navbar-brand"><i class="fa fa-home"></i></a>
+								<a href="<?php echo get_site_url(); ?>" class="navbar-brand"><i class="fa fa-home"></i></a>
 							</div>
 							<div id="navbar-collapse-1" class="navbar-collapse collapse ">
 								<ul class="nav navbar-nav">

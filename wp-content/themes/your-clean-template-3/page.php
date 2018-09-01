@@ -10,7 +10,7 @@ get_header(); // подключаем header.php ?>
 		get_template_part('my_category'); // для отображения каждой записи берем шаблон loop.php 
 		}
 	else { ?>
-		<section>
+		<section style="margin-top: 170px;">
 			<div class="container">
 				<div class="row">
 						<div class="<?php content_class_by_sidebar(); // функция подставит класс в зависимости от того есть ли сайдбар, лежит в functions.php ?>">
