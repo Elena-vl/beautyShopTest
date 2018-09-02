@@ -445,11 +445,10 @@ Template Name: Main Page
 						</aside>
 						<div class="col-md-9">
 							<div class="banner">
-								<a href="#">
-									<img src="<?php get_template_directory_uri() ?>\img\action.jpg" class="img-responsive" alt="">
-								</a> 
+								<!-- <a href="#"> -->
+									<img src="<?php echo carbon_get_theme_option( 'horizontal_banner_after_slider' ); ?>" class="img-responsive" alt="">
+								<!-- </a>  -->
 							</div>
-
 							<div class="block-product-tab">
 								<div class="tab-bg"></div>
 								<div class="toolbar-for-light" id="nav-tabs2">
@@ -745,42 +744,42 @@ Template Name: Main Page
 					<div class="row">
 						<div class="col-md-4">
 							<article class="payment-service">
-								<a href="#"></a>
+								<!-- <a href="#"></a> -->
 								<div class="row">
 									<div class="col-md-4 text-center">
-										<i class="fa fa-thumbs-up"></i>
+										<i class="fa <?php echo carbon_get_theme_option( 'feature_1_icon' ); ?>"></i>
 									</div>
 									<div class="col-md-8">
-										<h3 class="color-active">Safe Payments</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										<h3 class="color-active"><?php echo carbon_get_theme_option( 'feature_1_title' ); ?></h3>
+										<p><?php echo carbon_get_theme_option( 'feature_1_subtitle' ); ?></p>
 									</div>
 								</div>
 							</article>
 						</div>
 						<div class="col-md-4">
 							<article class="payment-service">
-								<a href="#"></a>
+								<!-- <a href="#"></a> -->
 								<div class="row">
 									<div class="col-md-4 text-center">
-										<i class="fa fa-truck"></i>
+										<i class="fa <?php echo carbon_get_theme_option( 'feature_2_icon' ); ?>"></i>
 									</div>
 									<div class="col-md-8">
-										<h3 class="color-active">Free shipping</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										<h3 class="color-active"><?php echo carbon_get_theme_option( 'feature_2_title' ); ?></h3>
+										<p><?php echo carbon_get_theme_option( 'feature_2_subtitle' ); ?></p>
 									</div>
 								</div>
 							</article>
 						</div>
 						<div class="col-md-4">
 							<article class="payment-service">
-								<a href="#"></a>
+								<!-- <a href="#"></a> -->
 								<div class="row">
 									<div class="col-md-4 text-center">
-										<i class="fa fa-fax"></i>
+										<i class="fa <?php echo carbon_get_theme_option( 'feature_3_icon' ); ?>"></i>
 									</div>
 									<div class="col-md-8">
-										<h3 class="color-active">24/7 Support</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+										<h3 class="color-active"><?php echo carbon_get_theme_option( 'feature_3_title' ); ?></h3>
+										<p><?php echo carbon_get_theme_option( 'feature_3_subtitle' ); ?></p>
 									</div>
 								</div>
 							</article>

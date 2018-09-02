@@ -14,8 +14,8 @@ use Carbon_Fields\Field;
 add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 function crb_attach_theme_options()
 {
-	Container::make( 'theme_options', __( 'Редактирование слайдера на главной', 'crb' ) )
-		->add_tab( 'Слайд 1', array(
+	Container::make( 'theme_options', __( 'Редактирование', 'crb' ) )
+		->add_tab( 'Слайдер на главной: Слайд 1', array(
 			Field::make( 'image', 'header_slider_slide_1_background', 'Фоновое изображение' )
 				->set_value_type( 'url' ),
 			Field::make( 'image', 'header_slider_slide_1_label_1', 'Подпись 1' )
@@ -25,7 +25,7 @@ function crb_attach_theme_options()
 			Field::make( 'image', 'header_slider_slide_1_label_3', 'Подпись 3' )
 				->set_value_type( 'url' ),
 		) )
-		->add_tab( 'Слайд 2', array(
+		->add_tab( 'Слайдер на главной: Слайд 2', array(
 			Field::make( 'image', 'header_slider_slide_2_background', 'Фоновое изображение' )
 				->set_value_type( 'url' ),
 			Field::make( 'image', 'header_slider_slide_2_label_1', 'Подпись 1' )
@@ -35,7 +35,7 @@ function crb_attach_theme_options()
 			Field::make( 'image', 'header_slider_slide_2_label_3', 'Подпись 3' )
 				->set_value_type( 'url' ),
 		) )
-		->add_tab( 'Слайд 3', array(
+		->add_tab( 'Слайдер на главной: Слайд 3', array(
 			Field::make( 'image', 'header_slider_slide_3_background', 'Фоновое изображение' )
 				->set_value_type( 'url' ),
 			Field::make( 'image', 'header_slider_slide_3_label_1', 'Подпись 1' )
@@ -44,6 +44,25 @@ function crb_attach_theme_options()
 				->set_value_type( 'url' ),
 			Field::make( 'image', 'header_slider_slide_3_label_3', 'Подпись 3' )
 				->set_value_type( 'url' ),
+		) )
+		->add_tab( 'Горизонтальный баннер под слайдером', array(
+			Field::make( 'image', 'horizontal_banner_after_slider', 'Изображение' )
+				->set_value_type( 'url' ),
+		) )
+		->add_tab( 'Преимущества: Преимущество 1', array(
+			Field::make( 'text', 'feature_1_icon', 'Код иконки (Font Awesome)' ),
+			Field::make( 'text', 'feature_1_title', 'Заголовок' ),
+			Field::make( 'text', 'feature_1_subtitle', 'Подзаголовок' ),
+		) )
+		->add_tab( 'Преимущества: Преимущество 2', array(
+			Field::make( 'text', 'feature_2_icon', 'Код иконки (Font Awesome)' ),
+			Field::make( 'text', 'feature_2_title', 'Заголовок' ),
+			Field::make( 'text', 'feature_2_subtitle', 'Подзаголовок' ),
+		) )
+		->add_tab( 'Преимущества: Преимущество 3', array(
+			Field::make( 'text', 'feature_3_icon', 'Код иконки (Font Awesome)' ),
+			Field::make( 'text', 'feature_3_title', 'Заголовок' ),
+			Field::make( 'text', 'feature_3_subtitle', 'Подзаголовок' ),
 		) );
 }
 

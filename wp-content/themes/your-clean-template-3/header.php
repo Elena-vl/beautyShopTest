@@ -116,7 +116,7 @@
 								</div>
 								<div class="col-md-4">
 									<div class="header-mini-cart  pull-right">
-										<a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" 
+										<a class="cart-contents" href="" 
 											title="<?php _e('Перейти в корзину', 'woothemes'); ?>" data-toggle="dropdown"> Корзина
 											<span>
 												<?php echo sprintf(_n('%d товар', '%d товаров', WC()->cart->cart_contents_count,        'woothemes'), WC()->cart->cart_contents_count);?> 
@@ -154,7 +154,11 @@
 													</div>
 													<a href="" class="trash"><i class="fa fa-trash-o pull-left"></i></a>
 												</div> -->
-											</div>	
+											</div>
+											<div class="total pull-left">	
+												<a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="btn-read pull-right">В корзину</a>
+												<a href="<?php site_url() ?>/checkout" class="btn-read pull-right">Заказать</a>
+											</div>
 											<?php else : ?>
 												<p class="woocommerce-mini-cart__empty-message"><?php _e( 'No products in the cart.', 'woocommerce' ); ?></p>
 											<?php endif; ?>	

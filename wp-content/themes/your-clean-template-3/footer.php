@@ -6,7 +6,7 @@
  */
 ?>
 	<footer id="footer-block">
-		<div class="social">
+		<!-- <div class="social">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
@@ -27,39 +27,36 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="footer-information">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-3">
+					<div class="col-md-4">
 						<div class="header-footer">
-							<h3>Information</h3>
+							<h3>ВКонтакте</h3>
 						</div>
-						<ul class="footer-categories list-unstyled">
-							<li><a href="#">About Us</a></li>
-							<li><a href="#">Contact Us</a></li>
-							<li><a href="#">Delivery Information</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-							<li><a href="#">Terms & Conditions</a></li>
-							<li><a href="#">Site Map</a></li>
-							<li><a href="#">Returns</a></li>
-						</ul>
+						<script type="text/javascript" src="https://vk.com/js/api/openapi.js?159"></script>
+						<!-- VK Widget -->
+						<div id="vk_groups"></div>
+						<script type="text/javascript">
+						VK.Widgets.Group("vk_groups", {mode: 3, color3: 'EB2C33'}, 20003922);
+						</script>
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-4">
 						<div class="header-footer">
-							<h3>My Account</h3>
+							<h3>Facebook</h3>
 						</div>
-						<ul class="footer-categories list-unstyled">
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Wish List</a></li>
-							<li><a href="#">Order History</a></li>
-							<li><a href="#">Brands</a></li>
-							<li><a href="#">Specials</a></li>
-							<li><a href="#">Newsletter</a></li>
-							<li><a href="#">Secure payment</a></li>
-						</ul>
+						<div id="fb-root"></div>
+						<script>(function(d, s, id) {
+						  var js, fjs = d.getElementsByTagName(s)[0];
+						  if (d.getElementById(id)) return;
+						  js = d.createElement(s); js.id = id;
+						  js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.1';
+						  fjs.parentNode.insertBefore(js, fjs);
+						}(document, 'script', 'facebook-jssdk'));</script>
+						<div class="fb-page" data-href="https://www.facebook.com/facebook" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
 					</div>
-					<div class="col-md-3">
+					<!-- <div class="col-md-3">
 						<div class="header-footer">
 							<h3>I want ...</h3>
 						</div>
@@ -72,17 +69,12 @@
 								<button type="submit"> Send us <i class="fa fa-angle-right"></i></button>
 							</form>
 						</div>
-
-
-
-					</div>
-					<div class="col-md-3">
+					</div> -->
+					<div class="col-md-4">
 						<div class="header-footer">
-							<h3>Get In Touch</h3>
+							<h3>Контакты</h3>
 						</div>
-						<p><strong>Phone: 1-000-000-0000</strong><br><strong>Email:</strong> info@yourdomain.com</p>
-						<p><strong>Your Company LTD.</strong><br>Street Name, 000000, City Name</p>
-						<p><a href=""><i class="icon-map-marker"></i> Location in Google Maps</a></p>
+						<p><strong>Телефон: +7 (922) 829-91-15</strong><br><strong>Email:</strong> beautyshop56@mail.ru</p>
 					</div>
 				</div>
 			</div>
@@ -96,11 +88,11 @@
 					</div>
 					<div class="col-md-4">
 						<p class="text-center">
-							БЬЮТИ-ШОП.РФ © 2018| Все права защищены.<br>
+							БЬЮТИ-ШОП.РФ © 2018 | Все права защищены.<br>
 							<a href="http://netolab.ru" target="_blank">Создание и продвижение сайта - NETOLAB</a>
 						</p>
 					</div>
-					<div class="col-md-4">
+					<!-- <div class="col-md-4">
 						<ul class="footer-payments pull-right">
 							<li><img src="<?php get_template_directory_uri() ?>\img\payment-maestro.jpg" alt="payment" /></li>
 							<li><img src="<?php get_template_directory_uri() ?>\img\payment-discover.jpg" alt="payment" /></li>
@@ -108,7 +100,7 @@
 							<li><img src="<?php get_template_directory_uri() ?>\img\payment-american-express.jpg" alt="payment" /></li>
 							<li><img src="<?php get_template_directory_uri() ?>\img\payment-paypal.jpg" alt="payment" /></li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
