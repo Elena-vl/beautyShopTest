@@ -195,34 +195,6 @@ Template Name: Main Page
 								 style="z-index: 4">
 								<img src="<?php echo carbon_get_theme_option( 'header_slider_slide_3_label_3' ); ?>" alt="">
 							</div>
-							<!-- <div class="tp-caption customin customout hidden-xs"
-								 data-x="20"
-								 data-y="430"
-								 data-customin="x:0;y:100;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:3;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:0% 0%;"
-								 data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								 data-speed="500"
-								 data-start="1000"
-								 data-easing="Power4.easeOut"
-								 data-endspeed="500"
-								 data-endeasing="Power4.easeIn"
-								 data-captionhidden="on"
-								 style="z-index: 2">
-								<a href="#" class="btn-home">Каталог</a>
-							</div> -->
-							<!-- <div class="tp-caption customin customout hidden-xs"
-								 data-x="145"
-								 data-y="430"
-								 data-customin="x:0;y:100;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:3;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:0% 0%;"
-								 data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-								 data-speed="500"
-								 data-start="1200"
-								 data-easing="Power4.easeOut"
-								 data-endspeed="500"
-								 data-endeasing="Power4.easeIn"
-								 data-captionhidden="on"
-								 style="z-index: 2">
-								<a href="#" class="btn-home">О магазине</a>
-							</div> -->
 						</li>
 					</ul>
 					<div class="revolutiontimer"></div>
@@ -295,43 +267,8 @@ Template Name: Main Page
 
 							<article class="product light last-sale">
 								<figure class="figure-hover-overlay">
-									<!-- <a href="#"  class="figure-href"></a> -->
-									<!-- <div class="product-sale-time"><p class="time"></p></div> -->
-									<!-- <a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a> -->
 									<?php the_widget( 'berocket_products_of_day_widget'); ?>
 								</figure>
-								<!-- <figure class="figure-hover-overlay">																	<a href="#"  class="figure-href"></a>
-									<div class="product-sale-time"><p class="time"></p></div>
-									<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a>
-								</figure>
-								<div class="product-caption">
-									<?php the_widget( 'berocket_products_of_day_widget'); ?>
-								</div> -->
-								<!-- <div class="product-caption">
-									<div class="block-name">
-										<a href="#" class="product-name">Название товара</a>
-										<p class="product-price"><span>₽330</span> ₽320.99</p>
-
-									</div>
-									<div class="product-cart">
-										<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-									</div>
-								</div> -->
-<!-- 								<div class="product-caption">
-								 	<?php the_widget( 'berocket_products_of_day_widget'); ?>
-								 </div> -->
-<!-- 							<figure class="figure-hover-overlay">															
-								</figure>
-								<div class="product-caption">
-									<div class="block-name">
-										<a href="#" class="product-name">Название товара</a>
-										<p class="product-price"><span>₽330</span> ₽320.99</p>
-									</div>
-									<div class="product-cart">
-										<a href="#"><i class="fa fa-shopping-cart"></i> </a>
-										<span class="hi_normal"><i class="fa fa-shopping-cart"></i>
-									</div>
-								</div> -->
 							</article>
 
 							<div class="widget-title">
@@ -391,28 +328,6 @@ Template Name: Main Page
 								<?php }; ?>
 								<?php endwhile; ?>
 								<?php wp_reset_postdata(); ?>
-							<!-- <div class="widget-block">
-								<div class="row">
-									<div class="col-md-4 col-sm-2 col-xs-3">
-										<img class="img-responsive" src="http://placehold.it/400x500" alt="" title="">	 
-									</div>
-									<div class="col-md-8 col-sm-10 col-xs-9">
-										<div class="block-name">
-											<a href="#" class="product-name">Product name</a>
-											<p class="product-price"><span>₽330</span> ₽320.99</p>
-
-										</div>
-										<div class="product-rating">
-											<div class="stars">
-												<span class="star active"></span><span class="star active"></span><span class="star active"></span><span class="star active"></span><span class="star active"></span>
-											</div>
-											<a href="" class="review hidden-md">8 Reviews</a>
-										</div>
-										<p class="description">Lorem ipsum dolor sit amet, con sec tetur adipisicing elit.</p>
-									</div>
-								</div>
-							</div> -->
-
 							<div class="widget-title">
 								<i class="fa fa-comments"></i> Последние новости
 							</div>
@@ -420,8 +335,7 @@ Template Name: Main Page
 								if ( have_posts() ) :
 								query_posts('cat=3');
 								while (have_posts()) : the_post();
-							?>
-							
+							?>							
 							<div class="widget-block">
 								<div class="row">
 									<div class="col-md-4	col-sm-2 col-xs-4">
@@ -657,48 +571,33 @@ Template Name: Main Page
 									<?php wp_reset_postdata(); ?>
 								</div>
 							</div>
-							
 							<!-- Отзывы покупателей -->
-							<!-- <div class="block">
+							<div class="block">
 								<div class="header-for-light">
 									<h4 class="wow fadeInRight animated" data-wow-duration="1s">Отзывы <span>покупателей</span></h4>
 								</div>
 								<ul class="media-list list-unstyled">
-	 									<li class="media">
-											<a class="pull-left" href="#">
-												<div class="pull-left">
-													<img src="http://placehold.it/80x80" alt="image">
-												</div>
-											</a>
-											<div class="media-body">
-												<h5 class="media-heading">Mosaic<span class="time-right">August 7, 2014 at 11.07 pm</span></h5>
-												<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, nonummy nibh euismod tincidunt ut lctetuer adipiscing eli nonummy nibh euismod dolore magna aliquam erat volutpat. </p>
+									<?php
+										comments_template('', true);
+									?>
+								 </ul>
+									<!-- <form method="post" action="#">
+										<div class="row">
+											<div class="col-md-12">
 											</div>
-										</li>
-										
-											
-									<div class="block-form box-border">
-										<div class="header-for-light">
-											<h4 class="wow fadeInRight animated" data-wow-duration="1s">Оставить <span>отзыв</span></h4>
-										</div>
-										<form method="post" action="#">
-											<div class="row">
-												<div class="col-md-12">
-												</div>
-												<div class="col-md-12">
-													<div class="form-group">
-														<div>
-															<textarea class="form-control" id="inputText"></textarea>
-														</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<div>
+														<textarea class="form-control" id="inputText"></textarea>
 													</div>
 												</div>
 											</div>
-											<hr>
-											<input type="submit" class="btn-default-1" value="Отправить">
-										</form>
-									</div>
-								</ul>
-							</div> -->
+										</div>
+										<hr>
+										<input type="submit" class="btn-default-1" value="Отправить">
+									</form> -->
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>	

@@ -303,6 +303,38 @@ if ( ! function_exists( 'cart_link' ) ) {
 				<?php echo WC()->cart->get_cart_total(); ?>
 			</span>
 		</a>
+		<div class="dropdown-menu shopping-cart-content pull-right">
+											<div class="shopping-cart-items">
+											<?php if ( ! WC()->cart->is_empty() ) : ?>
+												<?php 
+													global $woocommerce;
+													$items = $woocommerce->cart->get_cart();
+													
+													foreach($items as $cart_item_key => $cart_item) { 
+														$_product = $cart_item['data']->post; 
+														$price = get_post_meta($cart_item['product_id'] , '_price', true);
+														$count = $cart_item['quantity'];
+														?>
+														<div class="item pull-left">
+															<img src="http://placehold.it/56x70" alt="Название товара" class="pull-left">
+															<div class="pull-left">
+																<p><?php echo $_product->post_title; ?></p>
+																<p><?php echo $price; ?>&nbsp;<strong>x <?php echo $count; ?></strong></p>
+															</div>
+															<!-- <a href="" class="trash"><i class="fa fa-trash-o pull-left"></i></a> -->
+														</div>													
+														<?php
+												    } 
+												?>
+											</div>
+											<div class="total pull-left">	
+												<a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="btn-read pull-right">В корзину</a>
+												<a href="<?php site_url() ?>/checkout" class="btn-read pull-right">Заказать</a>
+											</div>
+											<?php else : ?>
+												<p class="woocommerce-mini-cart__empty-message"><?php _e( 'No products in the cart.', 'woocommerce' ); ?></p>
+											<?php endif; ?>	
+									</div>
 	 	<?php
 	 	$fragments['a.cart-customlocation'] = ob_get_clean();
 	}

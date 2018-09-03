@@ -22,7 +22,7 @@
 			</div>
 		<?php } ?>
 		<div class="<?php if ( has_post_thumbnail() ) { ?>col-sm-9<?php } else { ?>col-sm-12<?php } // разные классы в зависимости есть ли миниатюра ?>">
-			<?php the_content(''); // пост превью, до more ?>
+			<?php the_content(); // пост превью, до more ?>
 		</div>
 	</div>
 </article>

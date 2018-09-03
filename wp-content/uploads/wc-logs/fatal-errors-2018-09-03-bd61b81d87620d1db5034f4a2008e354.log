@@ -1,0 +1,24 @@
+2018-09-03T13:49:03+00:00 CRITICAL Uncaught Error: Call to a member function get_value() on null in C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\tpl_main_page.php:614
+Stack trace:
+#0 C:\OSPanel\domains\beauty-shop\wp-includes\template-loader.php(74): include()
+#1 C:\OSPanel\domains\beauty-shop\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\beauty-shop\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown
+
+2018-09-03T13:52:26+00:00 CRITICAL Uncaught Error: Call to a member function get_value() on null in C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\tpl_main_page.php:613
+Stack trace:
+#0 C:\OSPanel\domains\beauty-shop\wp-includes\template-loader.php(74): include()
+#1 C:\OSPanel\domains\beauty-shop\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\beauty-shop\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown
+
+2018-09-03T13:54:03+00:00 CRITICAL Uncaught Error: Call to a member function get_value() on null in C:\OSPanel\domains\beauty-shop\wp-content\themes\your-clean-template-3\tpl_main_page.php:614
+Stack trace:
+#0 C:\OSPanel\domains\beauty-shop\wp-includes\template-loader.php(74): include()
+#1 C:\OSPanel\domains\beauty-shop\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\beauty-shop\index.php(17): require('C:\\OSPanel\\doma...')
+#3 {main}
+  thrown
+
