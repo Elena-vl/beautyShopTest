@@ -215,16 +215,16 @@ Template Name: Main Page
 								<div class="main-category-items">
 									<div class="widget-block">
 										
-										<?php
+										<?php								
 											$args = array(
 												'taxonomy' => 'product_cat',
 												'orderby'	=> 'count',
 												'order'		=> 'DESC',
 												'hide_empty' => false,
 												'parent'	 => 0,
-												'exclude' => 17,
+												'exclude' => array(17,88),
 											);
-
+											
 											$product_categories = get_terms( $args );
 
 											$count = count($product_categories);
