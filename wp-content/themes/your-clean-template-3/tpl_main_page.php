@@ -303,10 +303,9 @@ Template Name: Main Page
 										<div class="col-md-4 col-sm-2 col-xs-3">
 										<?php 
 											$post_thumbnail_id = $product->get_image_id();
-											 $thumbnail_size = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
+											$thumbnail_size = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
 											$thumbnail_src = wp_get_attachment_image_src( $post_thumbnail_id, $thumbnail_size );
-											$html='<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-responsive" alt="" ></img>';
-											echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );		
+											echo '<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-responsive" alt="" ></img>';											
 										?>
 											<!-- <img class="img-responsive" src="http://placehold.it/400x500" alt="" title="">	  -->
 										</div>
@@ -412,12 +411,10 @@ Template Name: Main Page
 														<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a> -->
 														<?php 
 															$post_thumbnail_id = $product->get_image_id();
+															$thumbnail_size = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
 															$thumbnail_src = wp_get_attachment_image_src( $post_thumbnail_id, 'full');
-															
-															$html='<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-overlay img-responsive" alt="" ></img>';
-															echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );	
-															$html='<img src="http://placehold.it/400x500" class="img-responsive" alt="" ></img>';
-															echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );			
+															echo '<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-overlay img-responsive" alt="" ></img>';	
+															echo '<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-responsive" alt="" ></img>';							
 														?>
 														<!-- <img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
 														<img src="http://placehold.it/400x500" class="img-responsive" alt=""> -->
@@ -473,12 +470,10 @@ Template Name: Main Page
 														<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a> -->
 														<?php 
 															$post_thumbnail_id = $product->get_image_id();
+															$thumbnail_size = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
 															$thumbnail_src = wp_get_attachment_image_src( $post_thumbnail_id, 'full');
-															
-															$html='<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-overlay img-responsive" alt="" ></img>';
-															echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );	
-															$html='<img src="http://placehold.it/400x500" class="img-responsive" alt="" ></img>';
-															echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );			
+															echo '<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-overlay img-responsive" alt="" ></img>';	
+															echo '<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-responsive" alt="" ></img>';							
 														?>
 														<!-- <img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
 														<img src="http://placehold.it/400x500" class="img-responsive" alt=""> -->
@@ -544,12 +539,10 @@ Template Name: Main Page
 													<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a> -->
 													<?php 
 														$post_thumbnail_id = $product->get_image_id();
+														$thumbnail_size = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
 														$thumbnail_src = wp_get_attachment_image_src( $post_thumbnail_id, 'full');
-														
-														$html='<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-overlay img-responsive" alt="" ></img>';
-														echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );	
-														$html='<img src="http://placehold.it/400x500" class="img-responsive" alt="" ></img>';
-														echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );			
+														echo '<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-overlay img-responsive" alt="" ></img>';	
+														echo '<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-responsive" alt="" ></img>';							
 													?>
 													<!-- <img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt="">
 													<img src="http://placehold.it/400x500" class="img-responsive" alt=""> -->
@@ -611,7 +604,32 @@ Template Name: Main Page
 						<h1 class="wow fadeInRight animated" data-wow-duration="2s">Известные <span>бренды</span></h1>
 					</div>
 					<div id="owl-partners"	class="owl-carousel">
-						<div class="partner">
+						<?php
+									$args = array(
+										'taxonomy' => 'product_cat',
+										'orderby'	=> 'count',
+										'order'		=> 'DESC',
+										'hide_empty' => false,
+										'parent'	 => 88,
+									);
+									$product_sub_categories = get_terms( $args );
+									$product_category_link = '';
+
+									if (!empty($product_sub_categories))
+									{
+										foreach ( $product_sub_categories as $product_sub_category )
+										{
+											global $wp_query;
+										    $thumbnail_id = get_woocommerce_term_meta( $product_sub_category->term_id, 'thumbnail_id', true ); 
+										    $thumbnail_size = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
+										    $image = wp_get_attachment_image_src( $thumbnail_id, $thumbnail_size );; 
+										    echo '<div class="partner"><img src="' . $image[0] . '" class="img-responsive" alt="" ></img></div>';
+
+										}
+									}
+
+						?>
+					<!-- 	<div class="partner">
 							<img src="<?php get_template_directory_uri() ?>/img/preview/logo1.png" class="img-responsive" alt="">
 						</div>
 						<div class="partner">
@@ -631,7 +649,7 @@ Template Name: Main Page
 						</div>
 						<div class="partner">
 							<img src="<?php get_template_directory_uri() ?>/img/preview/logo7.png" class="img-responsive"	alt="">
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
