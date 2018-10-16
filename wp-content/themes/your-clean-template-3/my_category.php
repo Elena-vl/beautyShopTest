@@ -85,12 +85,18 @@
 									<a href="#" class="product-wishlist"><i class="fa fa-heart-o"></i></a> -->
 									<?php 
 										$post_thumbnail_id = $product->get_image_id();
+										$thumbnail_size = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
 										$thumbnail_src = wp_get_attachment_image_src( $post_thumbnail_id, 'full');
+										echo '<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-overlay img-responsive" alt="" ></img>';	
+										echo '<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-responsive" alt="" ></img>';	
+										// $post_thumbnail_id = $product->get_image_id();
+										// $thumbnail_size = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
+										// $thumbnail_src = wp_get_attachment_image_src( $post_thumbnail_id, $thumbnail_size);
 										
-										$html='<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-overlay img-responsive" alt="" ></img>';
-										echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );	
-										$html='<img src="http://placehold.it/400x500" class="img-responsive" alt="" ></img>';
-										echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );			
+										// echo '<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-overlay img-responsive" alt="" />';
+										// echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );	
+										// $html='<img src="http://placehold.it/400x500" class="img-responsive" alt="" ></img>';
+										// echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );			
 									?>
 									<!-- <img src="http://placehold.it/400x500" class="img-overlay img-responsive" alt=""> -->
 									<!-- <img src="http://placehold.it/400x500" class="img-responsive" alt=""> -->
@@ -98,7 +104,12 @@
 								<div class="product-caption">
 									<div class="block-name">
 										<a href="<?php echo get_the_permalink(); ?>" class="product-name"><?php echo $product->name; ?></a>
-										<p class="product-price"><span>₽<?php echo $product->regular_price; ?></span> ₽<?php echo $product->sale_price; ?></p>
+										<?php 
+										if (empty($product->sale_price))
+											echo '<p class="product-price">₽'. $product->regular_price .'</p>';
+										else
+											echo '<p class="product-price"><span>₽'.$product->regular_price.'</span> ₽'.$product->sale_price.'</p>';
+										?>
 
 									</div>
 									<div class="product-cart">

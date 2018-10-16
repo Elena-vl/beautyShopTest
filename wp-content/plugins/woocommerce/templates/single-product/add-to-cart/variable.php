@@ -29,25 +29,22 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 	<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>
 		<p class="stock out-of-stock"><?php esc_html_e( 'This product is currently out of stock and unavailable.', 'woocommerce' ); ?></p>
 	<?php else : ?>
-		<table class="variations" cellspacing="0">
-			<tbody>
-				<?php foreach ( $attributes as $attribute_name => $options ) : ?>
-					<tr>
-						<td class="label"><label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label></td>
-						<td class="value">
-							<?php
-								wc_dropdown_variation_attribute_options( array(
-									'options'   => $options,
-									'attribute' => $attribute_name,
-									'product'   => $product,
-								) );
-								echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
-							?>
-						</td>
-					</tr>
-				<?php endforeach; ?>
-			</tbody>
-		</table>
+		
+		<?php foreach ( $attributes as $attribute_name => $options ) : ?>
+			<div class="clearfix variations">
+				<label class="pull-left" for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>">
+					<?php echo wc_attribute_label( $attribute_name ). ':';  ?>		
+				</label>
+				<?php		
+					wc_dropdown_variation_attribute_options( array(
+						'options'   => $options,
+						'attribute' => $attribute_name,
+						'product'   => $product,
+					) );
+					// echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
+				?>
+			</div>
+		<?php endforeach; ?>
 
 		<div class="single_variation_wrap">
 			<?php

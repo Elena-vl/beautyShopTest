@@ -252,7 +252,7 @@ Template Name: Main Page
 														echo '<ul class="sub-category">';
 														foreach ( $product_sub_categories as $product_sub_category )
 														{
-															echo '<li><a	href="' . get_term_link( $product_sub_category ) . '">'.$product_sub_category->name . '</a></li>';
+															echo '<li><a href="' . get_term_link( $product_sub_category ) . '">'.$product_sub_category->name . '</a></li>';
 														}
 														echo "</ul>";
 													}
@@ -312,14 +312,19 @@ Template Name: Main Page
 										<div class="col-md-8 col-sm-10 col-xs-9">
 											<div class="block-name">
 												<a href="<?php echo get_the_permalink() ?>" class="product-name"><?php echo $product->name; ?></a>
-												<p class="product-price"><span>₽<?php echo $product->regular_price; ?></span> ₽<?php echo $product->sale_price; ?></p>
+												<?php 
+												if (empty($product->sale_price))
+													echo '<p class="product-price">₽'. $product->regular_price .'</p>';
+												else
+													echo '<p class="product-price"><span>₽'.$product->regular_price.'</span> ₽'.$product->sale_price.'</p>';
+												?>
 											</div>
-											<div class="product-rating">
+											<!-- <div class="product-rating">
 												<div class="stars">
 													<span class="star active"></span><span class="star active"></span><span class="star active"></span><span class="star active"></span><span class="star active"></span>
 												</div>
 												<a href="" class="review hidden-md">8 голосов</a>
-											</div>
+											</div> -->
 											<p class="description"><?php echo $product->product_cat_details; ?></p>
 										</div>
 									</div>
@@ -422,8 +427,12 @@ Template Name: Main Page
 													<div class="product-caption">
 														<div class="block-name">
 															<a href="<?php echo get_the_permalink(); ?>" class="product-name"><?php echo $product->name; ?></a>
-															<p class="product-price"><span>₽<?php echo $product->regular_price; ?></span> ₽<?php echo $product->sale_price; ?></p>
-
+															<?php 
+															if (empty($product->sale_price))
+																echo '<p class="product-price">₽'. $product->regular_price .'</p>';
+															else
+																echo '<p class="product-price"><span>₽'.$product->regular_price.'</span> ₽'.$product->sale_price.'</p>';
+															?>
 														</div>
 														<div class="product-cart">
 															<?php woocommerce_template_loop_add_to_cart(); ?>
@@ -481,7 +490,12 @@ Template Name: Main Page
 													<div class="product-caption">
 														<div class="block-name">
 															<a href="<?php echo get_the_permalink() ?>" class="product-name"><?php echo $product->name; ?></a>
-															<p class="product-price"><span>₽<?php echo $product->regular_price; ?></span> ₽<?php echo $product->sale_price; ?></p>
+															<?php 
+															if (empty($product->sale_price))
+																echo '<p class="product-price">₽'. $product->regular_price .'</p>';
+															else
+																echo '<p class="product-price"><span>₽'.$product->regular_price.'</span> ₽'.$product->sale_price.'</p>';
+															?>
 														</div>
 														<div class="product-cart">
 															<!-- <a href="#"><i class="fa fa-shopping-cart"></i> </a> -->
@@ -500,13 +514,13 @@ Template Name: Main Page
 							
 							<!-- Эксклюзивно -->
 							<div class="row">				
-								<div class="header-with-icon">
+								<!-- <div class="header-with-icon">
 									<i class="fa fa-tags"></i> Эксклюзивно в БЬЮТИ-ШОП.РФ
 									<div class="toolbar-for-light" id="nav-summer-sale">
 										<a href="javascript:;" data-role="prev" class="prev"><i class="fa fa-angle-left"></i></a>
 										<a href="javascript:;" data-role="next" class="next"><i class="fa fa-angle-right"></i></a>
 									</div>
-								</div>
+								</div> -->
 								<div id="owl-summer-sale" class="owl-carousel">
 									<?php
 										$args	 = array(
@@ -550,7 +564,12 @@ Template Name: Main Page
 												<div class="product-caption">
 													<div class="block-name">
 														<a href="<?php echo get_the_permalink() ?>" class="product-name"><?php echo $product->name; ?></a>
-														<p class="product-price"><span>₽<?php echo $product->regular_price; ?></span> ₽<?php echo $product->sale_price; ?></p>
+														<?php 
+														if (empty($product->sale_price))
+															echo '<p class="product-price">₽'. $product->regular_price .'</p>';
+														else
+															echo '<p class="product-price"><span>₽'.$product->regular_price.'</span> ₽'.$product->sale_price.'</p>';
+														?>
 													</div>
 													<div class="product-cart">
 														<!-- <a href="#"><i class="fa fa-shopping-cart"></i> </a> -->
@@ -623,7 +642,7 @@ Template Name: Main Page
 										    $thumbnail_id = get_woocommerce_term_meta( $product_sub_category->term_id, 'thumbnail_id', true ); 
 										    $thumbnail_size = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
 										    $image = wp_get_attachment_image_src( $thumbnail_id, $thumbnail_size );; 
-										    echo '<div class="partner"><img src="' . $image[0] . '" class="img-responsive" alt="" ></img></div>';
+										    echo '<div class="partner"><a href="' . get_term_link( $product_sub_category ) . '"><img src="' . $image[0] . '" class="img-responsive" alt="" ></a></div>';
 
 										}
 									}
