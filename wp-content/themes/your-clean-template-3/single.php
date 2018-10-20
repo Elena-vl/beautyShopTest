@@ -12,112 +12,102 @@ Template Name: Product Detail
 
 					<div class="header-for-light">
 						<h1 class="wow fadeInRight animated" data-wow-duration="1s"><span><?php the_title() ?></span> </h1>
-
 					</div>
 
-					<div class="block-product-detail">
+					 <div class="block-product-detail">
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								 <div class="product-images" id="product-<?php the_ID(); ?>" <?php wc_product_class(); ?>>
-									<?php 
+									<?php
 									global $product;
-									$product_id = get_the_ID();				
+									$product_id = get_the_ID();
 									$product = wc_get_product( $product_id );
-                                    remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
-                                    do_action( 'woocommerce_before_single_product_summary' );
+									remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+									do_action( 'woocommerce_before_single_product_summary' );
 									?>
-
-								 </div>
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								<div class="product-detail-section">							
+								<div class="product-detail-section">
 									<div class="product-information">
-										<div class="clearfix"> 
+										<div class="clearfix">
 											<label class="pull-left">Бренд:</label> <a href="#">
-											<?php 
+											<?php
 											$values = get_the_terms($product_id , 'pa_brand');
 											if (empty($values))
 												echo "—";
-											else 
-												foreach ( $values as $value ) 
-													echo $value->name; 	
+											else
+												foreach ( $values as $value )
+													echo $value->name;
 											?>
 											</a>
 										</div>
-										
-										<div class="clearfix"> 
+
+										<div class="clearfix">
 											<label class="pull-left">Артикул:</label>
-											<?php 
-												echo 'ID ' . $product->get_sku();
-											?>
+											<?php echo 'ID ' . $product->get_sku();?>
 										</div>
 
-										<?php 
+										<?php
 											switch ( $product->product_type ) {
-											 	case "variable" :
-												 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
-												 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-												 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-												 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
-											 	 do_action( 'woocommerce_single_product_summary' );
-											 	?>
+                                            case "variable" :
+                                                 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+                                                 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+                                                 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+                                                 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
+                                                 do_action( 'woocommerce_single_product_summary' );
+                                             break;
+                                             case "simple": ?>
+                                                <div class="clearfix">
+                                                    <label class="pull-left">Цена:</label>
+                                                    <?php
+                                                    if (empty($product->sale_price))
+                                                        echo '<p class="product-price">₽'. $product->regular_price .'</p>';
+                                                    else
+                                                        echo '<p class="product-price"><span>₽'.$product->regular_price.'</span> ₽'.$product->sale_price.'</p>';
+                                                    ?>
+                                                </div>
+                                                <?php
+                                                $attributes = $product->get_attributes();
+                                                foreach ($attributes as $attribute ) {
+                                                    if($attribute[name]!="pa_brand" && $attribute[name]!="pa_collection") {
+                                                        echo '<div class="clearfix">';
+                                                        echo '<label class="pull-left">Объем:</label> <a href="#">';
+                                                        $values = get_the_terms($product_id , $attribute[name]);
+                                                            if (empty($values))
+                                                                echo "—";
+                                                            else
+                                                                foreach ( $values as $value )
+                                                                    echo '<a href="#">' . $value->name . '</a>';
+                                                        echo '</div>';
+                                                    }
+                                                }
 
-											<?php  break; ?>
-											<?php  case "simple": ?>
-												<div class="clearfix">
-													<label class="pull-left">Цена:</label>
-													<?php 
-													if (empty($product->sale_price))
-														echo '<p class="product-price">₽'. $product->regular_price .'</p>';
-													else
-														echo '<p class="product-price"><span>₽'.$product->regular_price.'</span> ₽'.$product->sale_price.'</p>';
-													?>
-												</div>
-												<?php 
-												$attributes = $product->get_attributes();
-												foreach ($attributes as $attribute ) {
-													if($attribute[name]!="pa_brand" && $attribute[name]!="pa_collection") {
-														echo '<div class="clearfix">';
-														echo '<label class="pull-left">Объем:</label> <a href="#">';
-														
-														$values = get_the_terms($product_id , $attribute[name]);
-															if (empty($values))
-																echo "—";
-															else 
-																foreach ( $values as $value ) 
-																	echo '<a href="#">' . $value->name . '</a>'; 	
-														echo '</div>';
-													}
-												}
-												?>
-												<?php 
-												do_action( 'woocommerce_before_add_to_cart_form' ); ?>
+                                                do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
-												<form class="cart" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
+                                                <form class="cart" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
                                                     <label class="pull-left">Количество:</label>
                                                     <?php do_action( 'woocommerce_before_add_to_cart_button' );
-														do_action( 'woocommerce_before_add_to_cart_quantity' );
-														woocommerce_quantity_input( array(
-															'min_value'   => 1,
-															'max_value'   => 999,
-															'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) ) : $product->get_min_purchase_quantity(), 
-														) );
-														do_action( 'woocommerce_after_add_to_cart_quantity' );
-													?>
-													<br>
-													<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
-
-													<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
-												</form>			
-
-												<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
-										<?php break;	} ?>
-								</div>
+                                                    do_action( 'woocommerce_before_add_to_cart_quantity' );
+                                                    woocommerce_quantity_input( array(
+                                                        'min_value'	 => 1,
+                                                        'max_value'	 => 999,
+                                                        'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) ) : $product->get_min_purchase_quantity(),
+                                                    ) );
+                                                    do_action( 'woocommerce_after_add_to_cart_quantity' );
+                                                    ?>
+                                                    <br>
+                                                    <button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+                                                    <?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
+                                                </form>
+                                                <?php do_action( 'woocommerce_after_add_to_cart_form' );
+                                            break;	}
+                                        ?>
+                                    </div>
+                                </div>
 							</div>
 						</div>
 					</div>
+<!--Описание-->
 					<div class="box-border block-form">
-						<!-- Tab panes -->
 						<div class="tab-content">
 							<div class="tab-pane active" id="description">
 								<br>
@@ -126,46 +116,6 @@ Template Name: Product Detail
 								<p>
 									<?php echo $product->description; ?>
 								</p>
-							</div>
-							<div class="tab-pane" id="additional">
-								<br>
-								<div class="row">
-									<div class="col-md-4">
-										<h3>Размер:</h3>
-										<hr>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit ollit anim id est laborum.
-										</p>
-
-									</div>
-									<div class="col-md-4 block-color">
-										<h3>Colors</h3>
-										<hr>
-										<ul class="colors clearfix list-unstyled">
-											<li><a href="" rel="003d71"></a></li>
-											<li><a href="" rel="c42c39"></a></li>
-											<li><a href="" rel="f4bc08"></a></li>
-											<li><a href="" rel="02882c"></a></li>
-											<li><a href="" rel="000000"></a></li>
-											<li><a href="" rel="caccce"></a></li>
-											<li><a href="" rel="ffffff"></a></li>
-											<li><a href="" rel="f9e7b6"></a></li>
-											<li><a href="" rel="ef8a07"></a></li>
-											<li><a href="" rel="5a433f"></a></li>
-											<li><a href="" rel="ff9bb5"></a></li>
-											<li><a href="" rel="8c56a9"></a></li>
-										</ul>
-
-									</div>
-									<div class="col-md-4">
-										<h3>Other</h3>
-										<hr>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit ollit anim id est laborum.
-										</p>
-									</div>
-								</div>
-
 							</div>
 							<div class="tab-pane" id="review">
 								<form role="form" method="post" action="#">
@@ -185,6 +135,7 @@ Template Name: Product Detail
 						</div>
 					</div>
 				</div>
+<!--Каталог-->
 				<div class="col-md-3">
 					<div class="main-category-block ">
 						<div class="main-category-title">
@@ -245,7 +196,7 @@ Template Name: Product Detail
 							<?php the_widget( 'berocket_products_of_day_widget'); ?>
 						</figure>
 					</div>
-
+                    <!--Бестселлеры-->
 					<div class="widget-title">
 						<i class="fa fa-thumbs-up"></i> Бестселлеры
 					</div>
@@ -282,7 +233,7 @@ Template Name: Product Detail
 									$html='<img src="' . esc_url( $thumbnail_src[0] ) . '" class="img-responsive" alt="" ></img>';
 									echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );		
 								?>
-								<!-- <img class="img-responsive" src="http://placehold.it/400x500.jpg" alt="" title="">	  -->
+								<!-- <img class="img-responsive" src="http://placehold.it/400x500.jpg" alt="" title="">		-->
 							</div>
 							<div class="col-md-8">
 								<div class="block-name">
@@ -297,7 +248,6 @@ Template Name: Product Detail
 					<?php endwhile; ?>
 					<?php wp_reset_postdata(); ?>
 				</div>
-
 			</div>
 		</div>	
 	</div>
