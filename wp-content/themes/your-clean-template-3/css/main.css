@@ -850,14 +850,12 @@ Product style
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
     border: 5px solid #fff;
-    max-width: 263px;
     margin: 5px auto 10px;
     overflow: hidden;
     position: relative;
     background-color: #fff;
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.15);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.15);
-
     box-shadow: 0 0 10px rgba(0,0,0,.15)}
 .product.light:hover {
     border-color: #fff;
@@ -1095,6 +1093,7 @@ Product style
     position: relative}
 .figure-hover-overlay {
     position: relative;
+    height: 253px;
     overflow: hidden}
 .figure-hover-overlay .figure-href {
     text-transform: lowercase;
@@ -1360,7 +1359,7 @@ Header block of secondary pages
     font-family: 'Raleway',sans-serif;
     font-size: 13px}
 .breadcrumb>li a:hover {
-    color: #eb2c33}
+    color: #eb2c33;}
 .breadcrumb>li:after {
     margin-left: 10px;
     content: "\f105";
@@ -1369,11 +1368,11 @@ Header block of secondary pages
     font-weight: 400;
     text-decoration: inherit;
     font-size: 12px;
-    color: #0e0e0e}
+    color: #0e0e0e;}
 .breadcrumb>li+li:before {
     content: "";
     padding: 0}
-.breadcrumb>li: last-child:after {
+.breadcrumb>li:last-child:after {
     content: ""}
 .breadcrumb>.active {
     color: #eb2c33;
@@ -2053,10 +2052,10 @@ blockquote {
     border-radius: 0}
 .block-pagination ul>li:first-child a:hover {
     color: #fff}
-.block-pagination ul>li: last-child a {
+.block-pagination ul>li:last-child a {
     color: #0e0e0e;
     border-radius: 0}
-.block-pagination ul>li: last-child a:hover {
+.block-pagination ul>li:last-child a:hover {
     color: #fff}
 .ul-side-category {
     width: 100%;
@@ -2095,7 +2094,7 @@ blockquote {
 .ul-side-category li i {
     font-size: 16px;
     line-height: 18px}
-.ul-side-category li: last-child {
+.ul-side-category li:last-child {
     border: 0}
 .ul-side-category .sub-category {
     display: none;
@@ -2257,7 +2256,7 @@ Page Shopping cart
     display: block}
 .cart-table td:first-child {
     padding-top: .5em}
-.cart-table td: last-child {
+.cart-table td:last-child {
     padding-bottom: .5em}
 .cart-table td:before {
     content: attr(data-th) ": ";
@@ -2277,7 +2276,7 @@ Page Shopping cart
     padding: .25em .5em}
 .cart-table th:first-child,.cart-table td:first-child {
     padding-left: 0}
-.cart-table th: last-child,.cart-table td: last-child {
+.cart-table th:last-child,.cart-table td:last-child {
     padding-right: 0}
 }
 @media (min-width: 680px) {
@@ -2754,13 +2753,13 @@ Page Product details
     padding: 5px 10px;
     background: 0;
     color: #eaeaea}
-.social form: : -webkit-input-placeholder {
+.social form::-webkit-input-placeholder {
     color: #aaa}
-.social form: -moz-placeholder {
+.social form:-moz-placeholder {
     color: #aaa}
-.social form: : -moz-placeholder {
+.social form::-moz-placeholder {
     color: #aaa}
-.social form: -ms-input-placeholder {
+.social form:-ms-input-placeholder {
     color: #aaa}
 .social form button {
     position: absolute;
@@ -2814,13 +2813,13 @@ Page Product details
     padding: 5px 10px;
     background: 0;
     color: #eaeaea}
-.want form: : -webkit-input-placeholder {
+.want form::-webkit-input-placeholder {
     color: #aaa}
-.want form: -moz-placeholder {
+.want form:-moz-placeholder {
     color: #aaa}
-.want form: : -moz-placeholder {
+.want form::-moz-placeholder {
     color: #aaa}
-.want form: -ms-input-placeholder {
+.want form -ms-input-placeholder {
     color: #aaa}
 .want form button {
     position: absolute;
