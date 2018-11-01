@@ -1,0 +1,22 @@
+2018-10-15T11:16:00+00:00 CRITICAL Call to undefined method WC_Product_Simple::get_available_variations()
+
+2018-10-15T20:06:56+00:00 CRITICAL Call to undefined method WC_Product_Simple::get_available_variations()
+
+2018-10-15T20:20:52+00:00 CRITICAL Call to undefined method WC_Product_Simple::get_available_variations()
+
+2018-10-15T20:23:48+00:00 CRITICAL Call to undefined method WC_Product_Simple::get_available_variations()
+
+2018-10-15T20:25:49+00:00 CRITICAL Call to undefined method WC_Product_Simple::get_available_variations()
+
+2018-10-15T20:35:53+00:00 CRITICAL Call to undefined method WC_Product_Simple::get_available_variations()
+
+2018-10-15T20:54:08+00:00 CRITICAL Call to undefined method WC_Product_Simple::get_available_variations()
+
+2018-10-16T01:54:28+00:00 CRITICAL Call to a member function get_image_id() on a non-object
+
+2018-10-16T01:54:32+00:00 CRITICAL Call to a member function get_image_id() on a non-object
+
+2018-10-16T01:54:33+00:00 CRITICAL Call to a member function get_image_id() on a non-object
+
+2018-10-16T01:54:35+00:00 CRITICAL Call to a member function get_image_id() on a non-object
+

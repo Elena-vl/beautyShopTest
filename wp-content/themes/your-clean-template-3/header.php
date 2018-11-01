@@ -71,12 +71,12 @@
 							<!-- header-account menu -->
 							<div id="account-menu" class="pull-right">
 								<a href="<?php site_url() ?>/my-account" class="account-menu-title"> <i class="fa fa-user"></i>&nbsp; Профиль <i class="fa fa-angle-down"></i> </a>
-								<!-- <ul class="list-unstyled account-menu-item">
+								<ul class="list-unstyled account-menu-item">
 									<li><a href=""><i class="fa fa-list"></i>&nbsp; Контакты</a></li>
 									<li><a href=""><i class="fa fa-heart"></i>&nbsp; Желания</a></li>
 									<li><a href=""><i class="fa fa-tasks"></i>&nbsp; Заказы</a></li>
 									<li><a href=""><i class="fa fa-sign-out"></i>&nbsp; Выход</a></li>
-								</ul> -->
+								</ul>
 							</div>
 							<!-- /header-account menu -->
 
@@ -136,14 +136,7 @@
 														$count = $cart_item['quantity'];
 														?>
 														<div class="item pull-left">
-															<?php 
-															$product=new WC_product( $cart_item['product_id']);						 
-															$post_thumbnail_id = $product->get_image_id();
-															$thumbnail_size = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
-															$thumbnail_src = wp_get_attachment_image_src( $post_thumbnail_id, $thumbnail_size );
-															echo '<img src="' . esc_url( $thumbnail_src[0] ) . '" class="pull-left" alt="None" ></img>';							
-															 ?>
-															<!-- <img src="http://placehold.it/56x70" alt="Название товара" class="pull-left"> -->
+															<img src="http://placehold.it/56x70" alt="Название товара" class="pull-left">
 															<div class="pull-left">
 																<p><?php echo $_product->post_title; ?></p>
 																<p><?php echo $price; ?>&nbsp;<strong>x <?php echo $count; ?></strong></p>

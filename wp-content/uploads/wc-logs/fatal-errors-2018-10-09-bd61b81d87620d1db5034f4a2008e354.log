@@ -1,0 +1,2 @@
+2018-10-09T22:46:08+00:00 CRITICAL Call to undefined method WC_Product_Simple::get_available_variations()
+

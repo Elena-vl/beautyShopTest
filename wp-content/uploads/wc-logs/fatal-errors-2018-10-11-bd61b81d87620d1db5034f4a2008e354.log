@@ -1,0 +1,10 @@
+2018-10-11T14:46:34+00:00 CRITICAL Call to undefined method WC_Product_Simple::get_available_variations()
+
+2018-10-11T14:52:38+00:00 CRITICAL Call to undefined method WC_Product_Simple::get_available_variations()
+
+2018-10-11T15:08:47+00:00 CRITICAL Call to undefined method WC_Product_Simple::get_available_variations()
+
+2018-10-11T15:23:21+00:00 CRITICAL Call to undefined method WC_Product_Simple::get_available_variations()
+
+2018-10-12T00:27:30+00:00 CRITICAL Call to undefined method WC_Product_Simple::get_available_variations()
+
